@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{margin: 0;padding:0;}
+        body{background: #000;}
+        canvas{background: #fff;display: block;margin: 50px auto;}
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500"></canvas>
+
+
+<script>
+    /*
+         globalAlpha  设置或返回绘图的当前 alpha 或透明值
+
+         globalCompositeOperation 设置或返回新图像如何绘制到已有的图像上
+
+         前绘制的就是目标,后绘制的就是源
+            source-over------在目标图像上显示源图像
+            source-atop------在目标图像顶部显示源图像。源图像位于目标图像之外的部分是不可见的
+            source-in------在目标图像中显示源图像。只有目标图像内的源图像部分会显示，目标图像是透明的
+            source-out-----在目标图像之外显示源图像。只会显示目标图像之外源图像部分，目标图像是透明的
+
+            destination-over---在源图像上方显示目标图像
+            destination-atop---在源图像顶部显示目标图像。源图像之外的目标图像部分不会被显示
+            destination-in---在源图像中显示目标图像。只有源图像内的目标图像部分会被显示，源图像是透明的
+            destination-out---在源图像外显示目标图像。只有源图像外的目标图像部分会被显示，源图像是透明的
+
+            lighter---显示源图像 + 目标图像(叠加出现新的一种颜色)
+            copy---显示源图像。忽略目标图像
+            xor----使用异或操作对源图像与目标图像进行组合
+
+     */
+    var can=document.getElementById("canvas");
+    var cxt=can.getContext("2d");
+    cxt.fillStyle="red";
+    cxt.beginPath();
+    cxt.fillRect(100,100,100,100);//起点 宽高
+    cxt.closePath();
+    //cxt.globalAlpha="0.5";
+    cxt.globalCompositeOperation="xor";
+    cxt.fillStyle="blue";
+    cxt.beginPath();
+    cxt.fillRect(150,150,100,100);//起点 宽高
+    cxt.closePath();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+ffmpeg version N-64821-ge2842cf Copyright (c) 2000-2014 the FFmpeg developers
+built on Jul 20 2014 19:06:33 with gcc 4.8.1 (GCC)
+configuration: --pkg-config=pkg-config --prefix=/home/jacek/ff/packages/win32 --enable-memalign-hack --arch=x86 --target-os=mingw32 --cross-prefix=i686-w64-mingw32- --enable-gpl --disable-w32threads --enable-shared --disable-static --enable-libtheora --enable-libvorbis --enable-zlib
+libavutil      52. 92.101 / 52. 92.101
+libavcodec     55. 69.100 / 55. 69.100
+libavformat    55. 48.101 / 55. 48.101
+libavdevice    55. 13.102 / 55. 13.102
+libavfilter     4. 11.102 /  4. 11.102
+libswscale      2.  6.100 /  2.  6.100
+libswresample   0. 19.100 /  0. 19.100
+libpostproc    52.  3.100 / 52.  3.100
+-------------------------------------------------------------------------------- 
+Bitstream filters:
+text2movsub
+remove_extra
+noise
+mov2textsub
+mp3decomp
+mjpegadump
+mjpeg2jpeg
+imxdump
+h264_mp4toannexb
+dump_extra
+chomp
+aac_adtstoasc
+

@@ -1,0 +1,42 @@
+1.HTML5
+    HTML4
+    结构：html4.0
+    样式：css css2
+    行为：js
+    ---------------
+    HTML5
+    结构：html5.0
+    样式：css3
+    行为：js API增强 地理定位 web存储 拖拽
+
+    HTML5代表着浏览器发展的一个阶段
+
+2.语义化标签
+    header,nav,section,aside,article,figure,date,mark,time
+
+3.智能表单
+
+4.多媒体
+    之前：在网页上播放多媒体必须依靠第三方插件 media play
+    H5:提供了视频和音频的标签
+
+5.DOM扩展
+    querySelector()
+    querySelectorAll()
+
+    控制类名的API：
+    obj.classList.add();
+    obj.classList.remove();
+    obj.classList.contains();
+    obj.classList.toggle();
+
+    自定义属性：必须以data-开头
+    获取：
+    obj.dataset['name']
+    设置：
+    obj.dataset['szr']="123";
+
+6.CSS3
+    需要坚持'渐进增强'的原则,增强用户体验
+
+

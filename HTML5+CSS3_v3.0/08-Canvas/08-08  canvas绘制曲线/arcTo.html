@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制曲线</title>
+    <style>
+        *{margin: 0;padding:0;}
+        body{background: #000;}
+        canvas{background: #fff;display: block;margin: 50px auto;}
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+
+    <script>
+        var can=document.getElementById("canvas");
+        var cxt=can.getContext("2d");
+        /*
+            arcTo(x1,y1,x2,y2,r);
+            (x1,y1) (x2,y2)----坐标
+             r半径---控制弯曲程度
+        */
+        cxt.beginPath();
+        cxt.moveTo(100,300);
+        cxt.arcTo(100,100,200,100,50);
+        cxt.lineWidth=5;
+        cxt.stroke();
+    </script>
+</body>
+</html>

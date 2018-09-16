@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-线性渐变</title>
+    <style>
+        div {
+            width: 1000px;
+            height: 100px;
+            margin: 30px auto;
+            border: 1px solid #000;
+        }
+        /*
+            linear-gradient(方向,起始颜色,终止颜色);
+            方向：to left/to right/to top/to bottom
+
+            默认方向:从上到下
+        */
+        
+        div:nth-child(1) {
+            background: -webkit-linear-gradient(right, yellow, green);
+        }
+        
+        div:nth-child(2) {
+            background: -webkit-linear-gradient( yellow, green);
+        }
+        
+        div:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            background: -webkit-linear-gradient(145deg, yellow, green);
+        }
+        
+        div:nth-child(4) {
+            /*可以给颜色加相应的范围*/
+            background: -webkit-linear-gradient(right, yellow 0%, green 40%, blue 100%);
+        }
+        
+        div:nth-child(5) {
+            background: -webkit-linear-gradient(45deg, yellow 0%, yellow 25%, green 25%, green 50%, blue 50%, blue 100%);
+        }
+        
+        div:nth-child(6) {
+            background: -webkit-linear-gradient(-45deg, #000 0%, #000 25%, #fff 25%, #fff 50%, #000 50%, #000 75%, #fff 75%, #fff 50%);
+            background-repeat: repeat;
+            background-size: 100px 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>

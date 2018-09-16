@@ -1,0 +1,89 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		#wrap{
+			width:1000px;
+			margin:auto;
+			-webkit-column-width:100px;/*每一列的最小宽度*/
+			-webkit-column-count:4;
+		}
+		#wrap img{
+			width:100%;
+			display:block;
+		}
+		#count{
+			width:300px;
+			margin: 20px auto;
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<div id="count">
+			<input type="text" id="num" placeholder="请输入栏目数">
+			<button id="btn">css3瀑布流</button>
+		</div>
+		<div id="wrap">
+			<img src="images/1.jpg">
+			<img src="images/2.jpg">
+			<img src="images/3.jpg">
+			<img src="images/4.jpg">
+			<img src="images/5.jpg">
+			<img src="images/6.jpg">
+			<img src="images/7.jpg">
+			<img src="images/8.jpg">
+			<img src="images/9.jpg">
+			<img src="images/1.jpg">
+			<img src="images/2.jpg">
+			<img src="images/3.jpg">
+			<img src="images/4.jpg">
+			<img src="images/5.jpg">
+			<img src="images/6.jpg">
+			<img src="images/7.jpg">
+			<img src="images/8.jpg">
+			<img src="images/9.jpg">
+			<img src="images/1.jpg">
+			<img src="images/2.jpg">
+			<img src="images/3.jpg">
+			<img src="images/4.jpg">
+			<img src="images/5.jpg">
+			<img src="images/6.jpg">
+			<img src="images/7.jpg">
+			<img src="images/8.jpg">
+			<img src="images/9.jpg">
+			<img src="images/1.jpg">
+			<img src="images/2.jpg">
+			<img src="images/3.jpg">
+			<img src="images/4.jpg">
+			<img src="images/5.jpg">
+			<img src="images/6.jpg">
+			<img src="images/7.jpg">
+			<img src="images/8.jpg">
+			<img src="images/9.jpg">
+			<img src="images/6.jpg">
+			<img src="images/7.jpg">
+			<img src="images/8.jpg">
+			<img src="images/9.jpg">
+			<img src="images/6.jpg">
+			<img src="images/7.jpg">
+			<img src="images/8.jpg">
+			<img src="images/9.jpg">
+		</div>
+		<script>
+			var num = document.getElementById("num");
+			var btn = document.getElementById("btn");
+			var wrap = document.getElementById("wrap");
+			btn.onclick = function(){
+				wrap.style.WebkitColumnCount = num.value;
+			}
+		</script>
+	</body>
+</html>

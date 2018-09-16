@@ -1,0 +1,50 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		.wrap{
+			width:500px;height:200px;
+			margin:50px auto;
+			border:2px solid red;
+			display:flex;
+			/*定义项目在竖直方向上如何对齐*/
+			align-items:stretch ;
+			/*
+				(1)flex-start
+				(2)flex-end
+				(3)center
+				(4)baseline----基线(文本的对齐方式,对齐线)
+				(5)stretch-----当内元素没有设置高度或者高度为auto的时候 元素的高度将占满父元素
+			*/
+		}
+		.wrap div{
+			width:100px;height:auto;
+			background:blue;
+			margin:10px;
+			color:#fff;
+			font-size:40px;
+			text-align:center;
+			font-weight:bold;
+		}
+		.wrap div:nth-child(1){
+
+			font-size:30px;
+		}
+		.wrap div:nth-child(2){
+
+			font-size:20px;
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<div class="wrap">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</body>
+</html>

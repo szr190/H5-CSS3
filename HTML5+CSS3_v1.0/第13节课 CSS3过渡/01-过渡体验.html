@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-过渡体验</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            background: red;
+            /*transition:过渡属性 持续时间 运动形式 延迟时间*/
+            /*过渡需要加给盒子本身*/
+            transition: width 2s linear 1s, background-color 2s;
+        }
+        
+        .box:hover {
+            width: 600px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

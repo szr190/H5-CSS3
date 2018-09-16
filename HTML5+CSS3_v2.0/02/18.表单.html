@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            list-style-type:none;
+            padding: 0;
+        }
+
+        input{
+            width: 300px;
+            height: 30px;
+            line-height: 30ex;
+            padding: 0 10px;
+            display: block;
+            margin: 30px auto;
+            outline: none;
+        }
+        input:enabled{
+            border: green solid 1px;
+        }
+        input:disabled{
+            border: solid 1px red;
+            background-color: pink;
+        }
+        /*
+            :enabled     激活的
+            :disabled   未被激活的
+            :checked    选中的
+        */
+    </style>
+</head>
+<body>
+    <input type="text">
+    <input type="text" disabled>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-rgba</title>
+    <style>
+        /*
+            css3中新增了两种颜色模式
+                RGBA -> red/green/blue(0-255) alpha(0-1)
+                HSLA -> H(色调) S(饱和度) L(亮度) A(alpha)
+        */
+        
+        .out {
+            width: 400px;
+            height: 400px;
+            /*background-color: rgba(0, 0, 255, 0.3);*/
+            background-color: hsla(0, 20%, 90%, 0.8);
+            margin: 100px auto;
+            position: relative;
+        }
+        
+        .in {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -100px;
+            margin-top: -100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="out">
+        <div class="in"></div>
+    </div>
+
+    <!--19:38-->
+</body>
+
+</html>

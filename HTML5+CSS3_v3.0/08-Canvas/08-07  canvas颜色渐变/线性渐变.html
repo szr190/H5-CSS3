@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{background: #000;}
+        canvas{background: #fff;display: block;margin: 100px auto;}
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+<script>
+    var can=document.getElementById("canvas");
+    var cxt=can.getContext("2d");
+    /*
+        颜色渐变---线性渐变
+        createLinearGradient(x1,y1,x2,y2);
+        x1,y1---起始坐标点
+        x2,y2---结束坐标点
+
+        addColorStop(位置,颜色);
+        位置：渐变点 0-1之间
+    */
+    var color=cxt.createLinearGradient(0,0,100,100);
+    color.addColorStop(0,'#ff00ff');
+    color.addColorStop(0.5,'#ccc');
+    color.addColorStop(1,'#0066cc');
+    cxt.fillStyle=color;
+    cxt.fillRect(0,0,can.width,can.height);
+</script>
+</body>
+</html>

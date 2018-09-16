@@ -1,0 +1,39 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style id="css">/*css样式表的衣柜*/
+		p{
+			position:relative;
+			width:300px;
+			line-height:20px;
+			max-height:100px;
+			overflow:hidden;
+		}
+		p:after{
+			content:"...";
+			position:absolute;
+			right:0;
+			bottom:0;
+			padding-left:20px;
+			background:linear-gradient(to right,transparent 0%,#fff 43%);
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<p id="txt">百度（Nasdaq：BIDU）是全球最大的中文搜索引擎、最大的中文网站。2000年1月由李彦宏创立于北京中关村，致力于向人们提供“简单，可依赖”的信息获取方式。“百度”二字源于中国宋朝词人辛弃疾的《青玉案·元夕》词句“众里寻他千百度”，象征着百度对中文信息检索技术的执著追求。</p>
+		
+		<script>
+			var txt = document.getElementById("txt");
+			var css = document.getElementById("css");
+			var h = txt.scrollHeight;//获取p的滚内容高度
+			if (h <= 100)
+			{
+				css.innerHTML += "#txt:after{content:'';}";
+			}
+		</script>
+	</body>
+</html>

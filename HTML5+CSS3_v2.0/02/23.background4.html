@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background-color: yellowgreen;
+        }
+        .box{
+            width: 800px;
+            height: 400px;
+            margin: 30px auto;
+            border:dashed 2px red;
+
+            background-color: pink;
+            padding: 30px;
+
+
+            background-clip: content-box;
+
+            /*
+                background-clip: 背景绘制区域：
+                    content-box border-box padding-box
+            */
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box">文字是不透明的</div>
+</body>
+</html>

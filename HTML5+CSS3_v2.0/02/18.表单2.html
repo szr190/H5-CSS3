@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            list-style-type:none;
+            padding: 0;
+        }
+
+        label span{
+            width: 34px;
+            height: 34px;
+            display: inline-block;
+            background: url(input.png) 0 0 no-repeat;
+        }
+        label input{
+            display: none;
+        }
+        label input:checked + span{
+            background-position: -48px 0;
+        }
+        /*
+            :enabled     激活的
+            :disabled   未被激活的
+            :checked    选中的
+        */
+    </style>
+</head>
+<body>
+    <label for="i1">
+        <input type="checkbox" id="i1">
+        <span></span>
+    </label>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>03-边框阴影</title>
+    <style>
+        body {
+            background-color: #eee;
+        }
+        
+        .box {
+            width: 200px;
+            height: 300px;
+            margin: 100px auto;
+            background-color: #fff;
+            /*
+                阴影:x(水平) y(垂直) blur(模糊程度) size(阴影大小) color(颜色)
+                inset -> 内阴影
+            */
+            /*box-shadow: 3px 3px 3px 2px #ccc;*/
+            box-shadow: inset 3px 3px 3px 2px #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		.text{
+			width:500px;height:100px;margin:100px auto;
+		}
+		span{
+			position:relative;
+			display:inline-block;
+			font-size:100px;
+			color:#000;
+			overflow:hidden;
+		}
+		span:before{
+			position:absolute;
+			top:0;
+			content:attr(data-text);/*获取自定义文本*/
+			display:inline-block;
+			width:50%;
+			color:red;
+			overflow:hidden;
+			text-shadow:2px -2px 0px #0f0;
+		}
+		span:after{
+			position:absolute;
+			left:50%;
+			top:0;
+			direction:rtl;
+			content:attr(data-text);
+			display:inline-block;
+			width:50%;
+			overflow:hidden;
+			text-shadow:2px -2px 0px #00f;
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<div class="text">
+			<span data-text="潭">潭</span>
+			<span data-text="州">州</span>
+			<span data-text="教">教</span>
+			<span data-text="育">育</span>
+		</div>
+	</body>
+</html>

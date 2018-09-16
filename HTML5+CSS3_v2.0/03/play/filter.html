@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 320px;
+            height: 140px;
+            margin: 30px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        img[src*="bb"]{
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+            filter: blur(3px);
+        }
+        .img{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 50%;
+            top:50%;
+            margin-left: -58px;
+            margin-top: -58px;
+            border-radius: 50%;
+            padding: 8px;
+            border: solid 1px #fff;
+        }
+        .img img{
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="bb.jpg" alt="" class="">
+        <div class="img">
+            <img src="A74.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

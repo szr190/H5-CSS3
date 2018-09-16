@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding:0;}
+        #wrap{
+            width: 500px;
+            height:500px;
+            margin: 50px auto;
+            border: 1px solid #3399ff;
+        }
+        path{
+            stroke:red;
+            stroke-width: 5;
+            fill: none;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%">
+        <!--
+            路径
+            参数：
+            d属性---设置路径
+            M(起始坐标),L(结束坐标),H(水平线),V(垂直线),A(圆弧),Z(闭合路劲)
+
+            H(h)水平线
+            大写为绝对坐标(具体的坐标位置)
+	        小写为相对坐标(相对起始坐标点的具体长度)
+
+	        V(v)垂直线
+	        上面向上由坐标定
+	        下面向上由正负定
+
+	        A命令
+	        x半径 y半径
+	        角度(x半径与svg画布x坐标轴顺时针方向旋转的夹角)
+	        弧长(0 小弧 1大弧)
+	        方向(0逆时针 1顺时针)
+	        终点(x y)
+
+	        C命令：三次贝塞尔曲线
+	        (x1,y1,x2,y2,x,y)
+	        x1,y1 控制点一
+	        x2,y2 控制点二
+	        x,y 结束点
+
+            S命令：平滑贝塞尔曲线(自动对称一个控制点)
+	        (x2,y2,x,y)
+	        x2,y2控制点
+	        x,y结束点
+
+            Q命令：二次贝塞尔曲线
+	        (x1,y1,x,y)
+	        x1,y1控制点
+	        x,y结束点
+
+            T命令：一次贝塞尔曲线
+	        (x,y)结束点
+
+
+
+        -->
+        <!--<path d="M50 50L150 150L250 150Z M50 250L150 350L250 350Z "></path>-->
+        <!--<path d="M50 50L150 150H200V100Z M50 250L150 350h200v-50Z"></path>-->
+        <!--<path d="M250 100A100 50 360 1 1 300 300"></path>-->
+        <!--<path d="M100 200C150 100,200 300,300 200"></path>-->
+        <!--<path d="M100 200S200 300,300 200"></path>-->
+        <!--<path d="M100 200Q200 300,300 200"></path>-->
+        <path d="M100 200T300 200"></path>
+
+    </svg>
+</div>
+</body>
+</html>

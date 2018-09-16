@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>video属性</title>
+</head>
+<body>
+    <!--
+        API:
+        play()-------播放
+        pause()------暂停
+        currentTime----开始到播放现在所用的时间
+        duration-------媒体总时间(只读)
+        volume---------0.0-1.0的音量相对值
+        muted----------是否静音 false /true
+        paused---------媒体是否暂停(只读)
+        ended----------媒体是否播放完毕(只读)
+        error----------媒体发生错误的时候，返回错误代码 (只读)
+        currentSrc-----以字符串的形式返回媒体地址(只读)
+
+
+    -->
+    <video id="video" src="潭州教育.mp4" width="500"  controls>
+        <!--
+            引入source做兼容处理
+            HTML5支持的视频格式：
+                Ogg=带有Theora视频编码+Vorbis音频编码的Ogg文件
+                        支持的浏览器:F、C、O
+                MEPG4=带有H.264视频编码+AAC音频编码的MPEG4文件
+                        支持的浏览器: S、C
+                WebM=带有VP8视频编码+Vorbis音频编码的WebM格式
+                        支持的浏览器: I、F、C、O
+
+        -->
+        <source src="潭州教育.mp4" type="video/mp4" />
+        <source src="潭州教育.ogv" type="video/ogg" />
+        您的浏览器不支持Video标签,请您升级或者更换浏览器！！！
+    </video>
+    <button id="btn">播放</button>
+
+
+    <script>
+        var oVideo=document.getElementById("video");
+        var oBtn=document.getElementById("btn");
+        var mask=true;
+        oBtn.onclick=function(){
+            if(mask){
+                oVideo.play();
+                this.innerHTML="暂停";
+            }else{
+                oVideo.pause();
+                this.innerHTML="播放";
+            }
+
+            mask=!mask;
+
+        };
+    </script>
+</body>
+</html>

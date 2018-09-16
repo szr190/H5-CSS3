@@ -1,0 +1,69 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		body{
+			background:#000;
+		}
+		canvas{
+			display:block;
+			margin:50px auto;
+			background:#fff;
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<canvas id="canvas"width="500" height="500"></canvas>
+	</body>
+	<script>
+		var can = document.getElementById("canvas");
+		var cxt = can.getContext("2d");
+		
+		can.onmousedown = function(ev){
+			var ev = ev || window.event;
+			var point = {
+				 x : ev.clientX - can.offsetLeft,
+				 y : ev.clientY - can.offsetTop
+			};
+			circle1.draw(point);
+			circle2.draw(point);
+		};
+
+		function Circle(x,y){
+			this.x = x;
+			this.y = y;
+			cxt.fillStyle = "#9933ff";
+			cxt.beginPath();
+			cxt.arc(this.x,this.y,50,0,Math.PI*2,false);
+			cxt.closePath();
+			cxt.fill();
+		}
+		var circle1 = new Circle(200,200);
+		var circle2 = new Circle(300,300);
+		//在圆形粒子原型对象里面添加功能
+		Circle.prototype.draw = function(point){
+			cxt.beginPath();
+			cxt.arc(this.x,this.y,50,0,Math.PI*2,false);
+			cxt.closePath();
+			cxt.fill();
+			if (cxt.isPointInPath(point.x,point.y))
+			{
+				this.ale();
+			}
+		};
+		circle1.ale = function(){
+			alert(1);
+		};
+		circle2.ale = function(){
+			alert(2);
+		}
+	</script>
+</html>

@@ -1,0 +1,194 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+img{
+    border: none;
+    vertical-align: top;
+}
+em,i{
+    font-style: normal;
+}
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.clearfix:after{content: ""; display: block; clear: both; }
+.clearfix{*zoom:1;}
+
+
+body{
+    font-family: punctuation, PingFangSC-Regular, "Microsoft YaHei", "微软雅黑";
+}
+
+
+header{
+    background-color: #38474F;
+    padding: .6rem;
+    margin-bottom: 0.65rem;
+}
+.header_bar{
+    height: .85rem;
+    margin-bottom: .9rem;
+}
+.txt{
+    font-size: .65rem;
+    line-height: .85rem;
+    color: #FFF;
+    float: left;
+    padding-left: 10px;
+}
+.back{
+    float: left;
+    height: .7rem;
+    width: .7rem;
+    background-color: yellowgreen;
+}
+.shopCar{
+    float: right;
+    height: .7rem;
+    width: .7rem;
+    background-color: yellowgreen;
+    position: relative;
+}
+.shopCar i{
+    font-size: 12px;
+    height: .45rem;
+    line-height: .45rem;
+    border-radius: .225rem;
+    background-color: #fff;
+    padding: 0 .2rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.btn a{
+    display: inline-block;
+    width: 49%;
+    height: 1.575rem;
+    line-height: 1.575rem;
+    border-radius: 3px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    text-align: center;
+}
+.gm{
+    background-color: #2D3A40;
+}
+.gwc{
+    background-color: #F6846A;
+}
+
+.banner{
+    margin: .6rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.4);
+    overflow: hidden;
+}
+.banner_imgs{
+    position: relative;
+}
+.banner ul{
+    /*width: 300%;*/
+}
+.banner ul li{
+    float: left;
+    display: none;
+}
+.banner ul .current{
+    display: block;
+}
+.banner img{
+    width: 14.8rem;
+}
+.banner_imgs ol{
+    position: absolute;
+    left: 1rem;
+    bottom: 0.75rem;
+}
+.banner_imgs ol li{
+    float: left;
+    height: 8px;
+    width: 20px;
+    float: left;
+    margin-right: 3px;
+    background-color: #D0D2D3;
+    border-radius: 2px;
+}
+.banner_imgs ol .current{
+    background-color: #67B0D6;
+}
+.banner_text{
+    padding: 0.65rem;
+}
+.banner_info{
+    float: left;
+    height:1.675rem;
+    line-height: 1.675rem;
+    font-size: 0.5rem;
+}
+.banner_buy{
+    height:1.675rem;
+    line-height: 1.675rem;
+    width: 3.55rem;
+    background-color: #BFBFC4;
+    color: #FFF;
+    border-radius: 6px;
+    float: right;
+    font-size: 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

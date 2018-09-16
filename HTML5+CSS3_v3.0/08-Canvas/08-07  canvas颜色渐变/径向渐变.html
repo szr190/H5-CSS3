@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{background: #000;}
+        canvas{background: #fff;display: block;margin: 100px auto;}
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+<script>
+    var can=document.getElementById("canvas");
+    var cxt=can.getContext("2d");
+    /*
+        颜色渐变---径向渐变
+         createRadialGradient(x1,y1,r1,x2,y2,r2)
+         x1,y1,r1内圆坐标及半径
+         x2,y2,r2外圆坐标及半径
+
+        addColorStop(位置,颜色);
+        位置：渐变点 0-1之间
+    */
+    var color=cxt.createRadialGradient(250,250,50,250,250,150);
+
+    color.addColorStop(0,'#ff00ff');
+    color.addColorStop(0.5,'#ccc');
+    color.addColorStop(1,'#0066cc');
+    cxt.fillStyle=color;
+    cxt.fillRect(0,0,can.width,can.height);
+
+
+</script>
+</body>
+</html>

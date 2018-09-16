@@ -1,0 +1,44 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		.wrap{
+			width:500px;height:600px;
+			margin:50px auto;
+			border:2px solid red;
+			display:flex;
+			flex-wrap: wrap;
+			justify-content:space-around;/*定义对齐方式*/
+			/*定义多行对齐方式*/
+			align-content:stretch ;
+		}
+		.wrap div{
+			width:100px;height:100px;
+			background:blue;
+			margin:10px;
+			color:#fff;
+			font-size:40px;
+			text-align:center;
+			font-weight:bold;
+		}
+		
+		</style>
+	</head>
+	<body><!--身体-->
+		<div class="wrap">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</body>
+</html>

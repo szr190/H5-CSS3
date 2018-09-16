@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-动画属性详解</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background: #f00;
+            margin: 100px auto;
+            /*animation: move 1s alternate linear;*/
+            /*animation属性详解*/
+            /*动画名称*/
+            animation-name: move;
+            /*一次动画持续的时间,前两个属性必须固定,顺序不变*/
+            animation-duration: 2s;
+            /*动画执行次数 无数次：infinite*/
+            animation-iteration-count: 1;
+            /*动画的方向 正常：normal;反向：alternate*/
+            animation-direction: alternate;
+            /*动画延迟执行*/
+            animation-delay: 1s;
+            /*设置动画结束盒子的状态 forwards:保持动画结束后的状态 backwards：保持动画开始前的状态*/
+            animation-fill-mode: forwards;
+            /*运动曲线 linear ease-in-out steps()*/
+            /*animation-timing-function: linear;*/
+            animation-timing-function: steps(8);
+        }
+        
+        @keyframes move {
+            0% {}
+            100% {
+                transform: translateX(500px) rotate(300deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

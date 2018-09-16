@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            perspective: 500px;
+            /*
+                景深：
+                    值越小 代表的是我们离物体越近
+                        一般推荐大家使用 500~800
+            */
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            margin: 70px auto;
+            transition: .35s;
+            transform-origin: 20px 40px;
+
+            /*
+                flat | preserve-3d
+                设置该元素在2d平面 | 3d空间
+            */
+        }
+        .box:hover{
+            transform: rotateX(45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+
+    </div>
+</body>
+</html>

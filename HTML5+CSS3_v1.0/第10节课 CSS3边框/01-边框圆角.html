@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-边框圆角</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+            background-color: orange;
+            margin: 100px auto;
+            /*单个属性:x(水平) y(垂直)*/
+            border-top-left-radius: 80px 120px;
+            border-top-right-radius: 60px 80px;
+            /*复合写法:x(水平)/y(垂直)*/
+            border-radius: 60px/60px;
+            /*四个角的水平和垂直半径都相同*/
+            border-radius: 100px;
+            /*四个角度顺时针为：左上,右上,右下,左下*/
+            border-radius: 20px 30px 40px 60px;
+            /*如果当前角没有值取对角值,例如三个值的情况*/
+            border-radius: 20px 40px 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

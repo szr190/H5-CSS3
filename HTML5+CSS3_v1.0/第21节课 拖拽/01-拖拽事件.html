@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" draggable="true"></div>
+
+    <script>
+        var oBox = document.querySelector("#box");
+        // 绑定拖拽事件
+
+        // 拖拽开始
+        oBox.ondragstart = function() {
+            console.log(1);
+        }
+
+        // 拖拽离开
+        oBox.ondragleave = function() {
+            console.log(1.5);
+        }
+
+        // 拖拽结束
+        oBox.ondragend = function() {
+            console.log(2);
+        }
+    </script>
+</body>
+
+</html>

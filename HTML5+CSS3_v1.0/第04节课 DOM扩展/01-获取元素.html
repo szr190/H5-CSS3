@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 10px auto;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        在浏览器中,打开一个页面,浏览器首先会解析我们的网页,把解析出来的数据存放在一个DOM对象中
+
+        在H5中DOM新增的功能：
+        
+    -->
+    <div class="box box1" id="box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+
+    <script>
+        // 原来获取Id的方式
+        var oBox = document.getElementById("#box1");
+        // H5新增的方式
+        // -> document.querySelector 只会获取符合条件的第一个元素
+        var qBox = document.querySelector(".box1");
+        qBox.style.background = "red";
+
+        // 但是如果querySelector里面写的是div,则会只获取到一个,解决方法：用querySelectorAll,返回的是一个数组,参数可以是任意的css选择器
+        var divs = document.querySelectorAll('div');
+        console.log(divs);
+        for (var i = 0; i < divs.length; i++) {
+            var curDivs = divs[i];
+            curDivs.style.background = "green";
+        }
+    </script>
+</body>
+
+</html>

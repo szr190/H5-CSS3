@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>04-tab栏练习</title>
+</head>
+
+<body>
+    <div class="tabs">
+        <nav>
+            <a href="#" data-cont="local">国内新闻</a>
+            <a href="#" data-cont="global">国际新闻</a>
+            <a href="#" data-cont="sports">体育新闻</a>
+            <a href="#" data-cont="funny">娱乐新闻</a>
+        </nav>
+        <section class="cout" id="local">1</section>
+        <section class="cout" id="global">2</section>
+        <section class="cout" id="sports">3</section>
+        <section class="cout" id="funny">4</section>
+    </div>
+
+    <script>
+        // key 表示让第几个显示
+        function tabs(key) {
+            // 1.获取所有的导航
+            var navs = document.querySelectorAll('nav a');
+            // 2.遍历 给导航 绑定事件 ,并且添加当前样式
+            for (var i = 0; i < navs.length; i++) {
+                // 3.如果是当前用户指定的当前样式
+                if (key == i) {
+                    navs[i].classList.add('active');
+                    // 4.拿到要显示内容section的id
+                    var secId = navs[i].dataset['cont'];
+                    // 5.获取对应的section标签
+                    document.querySelector('#' + secId).style.display = "block";
+                }
+                // 6.绑定点击事件
+                navs[i].onclick = function() {
+                    // 7.排他：
+                    // (1)之前有active的样式清除
+                    // (2)之前显示的section隐藏
+                    var currentNav = document.querySelector('.active');
+                    var currentId = currentNav.dataset['cont'];
+                    currentNav.classList.remove('active');
+                    document.querySelector('#' + currentId).style.display = "none";
+                    // 8.突出显示自己,导航样式添加,对应的section显示
+                    this.classList.add('active');
+                    var myId = this.dataset['cont'];
+                    document.querySelector('#' + myId).style.display = "block";
+                }
+            }
+        }
+
+        tabs(2);
+    </script>
+</body>
+
+</html>

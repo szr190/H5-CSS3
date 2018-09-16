@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选中父元素下的第一个 first-child 最后一个 last-child</title>
+		<style>
+			*{margin: 0;padding: 0;}
+			div p{width: 400px;height: 50px;border: 1px solid red;margin-bottom: 10px;}
+			p:first-child{/*选中父元素下的第一个*/
+				border: 2px solid navy;
+			}
+			p:last-child{
+				border: 3px solid brown;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+	</body>
+</html>

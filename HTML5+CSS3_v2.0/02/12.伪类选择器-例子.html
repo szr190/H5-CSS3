@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="author" content="">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <style>
+        *{
+            margin: 0;
+            list-style-type:none;
+            padding: 0;
+        }
+        .page{
+            text-align: center;
+            font-size: 14px;
+            padding: 30px;
+        }
+        .page a{
+            width: 20px;
+            height: 20px;
+            border: solid 1px red;
+            display: inline-block;
+            background-color: #ccc;
+        }
+        .page .active ~ a{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <span>上一页</span>
+        <a href="###">1</a>
+        <a href="###">2</a>
+        <a href="###">3</a>
+        <a href="###">4</a>
+        <a href="###" class="active">5</a>
+        <a href="###">6</a>
+        <a href="###">7</a>
+        <a href="###">8</a>
+        <span>下一页</span>
+    </div>
+</body>
+</html>

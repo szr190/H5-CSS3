@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制边界角样式</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{background: #000;}
+        canvas{
+            background: #fff;
+            display: block;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" width="500" height="500">
+    您的浏览器不支持canvas,请更换浏览器！
+</canvas>
+
+
+<script>
+    var can=document.getElementById("canvas");
+    //设置canvas的绘图环境
+    var cxt=can.getContext("2d");//意思就是目前支持2d绘图环境
+
+    cxt.beginPath();//开始路径
+    cxt.moveTo(100,100);
+    cxt.lineTo(200,200);
+    cxt.lineTo(270,100);
+    cxt.lineTo(210,60);
+    cxt.closePath();//闭合路径
+    cxt.strokeStyle="#f00";
+    cxt.lineWidth=5;
+
+    /*
+        lineJoin 边界连接点样式
+
+        round---圆角
+        bevel---斜角
+
+        lineCap 端点样式
+
+        round---圆角
+        butt---默认值
+        square---高度多出线宽一半
+
+    */
+    //cxt.lineJoin="round";
+    //cxt.lineJoin="bevel";
+
+    //cxt.lineCap="square";//用lineCap的话闭合路径一定要去掉才会起作用
+
+
+    cxt.stroke();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>canvas绘制视频</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <video id="video" src="xxx.mp4" autoplay></video>
+    <canvas id="canvas"></canvas>
+
+
+
+    <script>
+        var oVideo = document.getElementById("video");
+        var can = document.getElementById("canvas");
+        var cxt = can.getContext("2d");
+        var _width = window.innerWidth;
+        var _height = window.innerHeight;
+        can.width = _width;
+        can.height = _height;
+        setInterval(function() {
+            cxt.drawImage(oVideo, 0, 0);
+        }, 1000 / 60);
+    </script>
+</body>
+
+</html>

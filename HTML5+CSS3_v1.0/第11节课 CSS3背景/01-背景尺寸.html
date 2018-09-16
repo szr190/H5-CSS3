@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-背景尺寸</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+            border: 1px solid #000;
+            background: url(images/baby0.jpg) no-repeat;
+            /*控制背景的大小*/
+            /*具体数值*/
+            /*background-size: 100px 100px;*/
+            /*百分比*/
+            /*background-size: 100% 100%;*/
+            /*cover -> 覆盖*/
+            /*会保证完全覆盖盒子,但是不能保证完全显示*/
+            /*background-size: cover;*/
+            /*contain -> 包含*/
+            /*保证背景图片最大化的在盒子中等比例显示,但是不保证铺满盒子*/
+            background-size: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin: 10px auto;
+            border: 1px solid #000;
+        }
+        
+        .active {
+            border-radius: 50%;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+    <div class="box box4"></div>
+    <button type="button">按钮</button>
+
+    <script>
+        var oBox = document.querySelector('.box1');
+        // 增加active
+        // oBox.className += 'active';
+        // 删掉active
+        // oBox.className = 'box box1';
+
+        // H5新增的操作类名的方式,和Jq一样好用
+        // 添加类名
+        oBox.classList.add('active');
+        // 删除类名
+        // oBox.classList.remove('active');
+        // 包含类名
+        var f = oBox.classList.contains('active');
+        console.log(f); //true
+        // 切换类名
+        document.querySelector('button').onclick = function() {
+            document.querySelector('.box3').classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

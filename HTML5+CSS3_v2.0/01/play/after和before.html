@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            float: left;
+        }
+        .box:before{
+            content: 'asdfadf';
+        }
+        .box:after{
+            content: '猪';
+        }
+
+        /*
+            伪元素   不是 真正的元素 是一个“假”的
+        */
+        .box:hover:after{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+        这是多出来的猪
+
+    </div>
+</body>
+</html>

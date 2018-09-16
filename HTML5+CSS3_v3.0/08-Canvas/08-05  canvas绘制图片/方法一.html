@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{background: #000;}
+        canvas{background: #fff;display: block;margin: 100px auto;}
+    </style>
+</head>
+<body onload="draw();">
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <img src="7.jpg" alt="" id="img">
+
+<script>
+    var can=document.getElementById("canvas");
+    var oImg=document.getElementById("img");
+    var cxt=can.getContext("2d");
+    /*
+        canvas绘制图片
+        图片预加载(目的就是先让图片加载),获取图片文件
+        在onload中定义
+
+        drawImage(图片,x,y,w,h); 路径、x轴、y轴、宽度、高度
+    */
+    function draw(){
+        cxt.drawImage(oImg,0,0);
+    }
+
+</script>
+</body>
+</html>

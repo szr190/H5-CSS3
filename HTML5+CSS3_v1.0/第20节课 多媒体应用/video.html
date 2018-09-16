@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+        video{
+            border: 1px solid red;
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+    <body>
+    	<video id="myvideo" controls autobuffer>
+    		<source src="video/fun.mp4">
+    		<p>请在支持HTML5 video标签的浏览器中</p>
+		</video>
+		<canvas id="mycanvas" width="400" height="300" style="border: 1px solid red"></canvas>
+
+		<script>
+		        window.addEventListener("load",function(){
+		            alert("页面加载完成");
+		            //获取视频对象
+		            var myvideo=document.getElementById("myvideo");
+		            //获取画布对象
+		            var mycanvas=document.getElementById("mycanvas");
+		           
+		            var fps=30/1000;
+		            setInterval(function(){
+		               mycanvas.getContext("2d").drawImage(myvideo,0,0,400,300);
+		            },fps);
+
+		        },true);
+	    </script>
+    </body>
+</html>

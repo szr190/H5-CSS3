@@ -1,0 +1,35 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		.box{
+			width:500px;height:500px;
+			border:2px solid red;
+			margin:50px auto;
+		}
+		.div1{
+			width:100px;height:100px;
+			background:blue;
+			margin-bottom:10px;
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<div class="box">
+			<div class="div1 div2" id="div2">DIV2</div>
+		</div>
+		<script>
+			var oDiv = document.getElementById("div2");
+			oDiv.onclick = function(){
+				oDiv.style.WebkitTransform = "matrix(1,0.58,0,1,0,0)";
+				oDiv.style.MozTransform = "matrix(1,0.58,0,1,0,0)";
+				oDiv.style.transform = "matrix(1,0.58,0,1,0,0)";
+				oDiv.style.filter = "progid:DXImageTransform.Microsoft.Matrix( M11= 1, M12= 0, M21= 0.58 , M22=1,SizingMethod='auto expand')";
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		.wrap{
+			width:500px;height:200px;
+			margin:50px auto;
+			border:2px solid red;
+			display:flex;/*定义弹性盒模型 任何浮动都是不起作用的*/
+			flex-direction:row;
+			/*控制盒模型的方向 row行 row-reverse反向 column垂直 column-reverse*/
+			justify-content: center;/*水平居中*/
+			align-items: center;/*垂直居中*/
+		}
+		.wrap div{
+			width:100px;height:90px;
+			line-height: 90px;
+			padding-top: 10px;
+			background:blue;
+			margin:10px;
+			color:#fff;
+			font-size:20px;
+			text-align:center;
+			font-weight:bold;
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<div class="wrap">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+		</div>
+	</body>
+</html>

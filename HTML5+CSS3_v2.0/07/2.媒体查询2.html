@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    
+    <style>
+        
+        /*
+            声明：@media
+            条件：min-width、height/max-width、height设备类型
+        
+            min-width 最小宽度 >=
+            max-width 最大宽度 <=
+        
+            原则：
+                永远要从 最小的设备写起 （phone > pad > pc > pc宽屏）
+        */
+        
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        
+/*
+        .box{
+            position: static;
+            float: none;
+            border-right: none;
+        }
+*/
+        
+        /*>=768 && <= 999*/ 
+        
+        /*
+            and 并且
+            not 不是什么
+            only  不支持的忽略
+        
+            device-width/min、max
+                device-width
+                max-device-width / min-device-width
+        
+            @media (orientation : landscape)	   横屏
+            @media (orientation : portrait)		   竖屏
+
+            
+        */
+        @media print{
+            .box{
+                width: 600px;
+                background-color: grey;
+            }
+        }
+        
+        /*pc*/
+        @media (min-width:1000px){
+            .box{
+                width: 800px;
+                background-color: yellowgreen;
+            }
+        }
+        
+        
+        
+        
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

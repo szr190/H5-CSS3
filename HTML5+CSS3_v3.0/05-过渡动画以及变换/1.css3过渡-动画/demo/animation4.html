@@ -1,0 +1,52 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		.wrap{
+			width:500px;
+			height:500px;
+			border:2px solid blue;
+		}
+		.box{
+			position:relative;
+			left:0px;
+			top:0px;
+			width:100px;
+			height:100px;
+			background:red;
+			animation:mov 10s infinite alternate;/*infinite--循环播放 alternate--动画轮流反向播放*/
+		}
+		@keyframes mov{/*规定具体每一帧的动画*/
+			0%{/*动画开始时候*/
+				left:0px;
+				top:0px;
+			}
+			25%{/*动画执行到25%时候*/
+				left:400px;
+				top:0px;
+			}
+			50%{
+				left:400px;
+				top:400px;
+			}
+			75%{
+				left:0px;
+				top:400px;
+			}
+			100%{
+				left:0px;
+				top:0px;
+			}
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<div class="wrap">
+			<div class="box"></div>
+		</div>
+	</body>
+</html>

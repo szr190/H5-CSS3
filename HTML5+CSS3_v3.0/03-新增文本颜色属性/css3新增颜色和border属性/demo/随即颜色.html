@@ -1,0 +1,75 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		#div{
+			width:200px;height:200px;
+			background:red;
+		}
+
+		</style>
+	</head>
+	<body><!--身体-->
+		<div id="div"></div>
+		<button id="btn">点击改变颜色</button>
+		<script>
+			var div = document.getElementById("div");
+			var btn = document.getElementById("btn");
+			//第一种  rgba随机颜色
+			/*btn.onclick = function(){
+				var r = Math.floor(Math.random()*255);
+				var g = Math.floor(Math.random()*255);
+				var b = Math.floor(Math.random()*255);
+				var a = Math.random();
+				div.style.background = "rgba("+r+","+b+","+g+","+a+")";
+			}*/
+			
+			//第二种 十六进制
+			function color1(){
+				var colors = [0,1,2,3,4,5,6,7,8,9,"a","b","c","d","e","f"];
+				//colors[15] = f 
+				var color = '';
+				for (var i=0;i<6 ;i++ )
+				{
+					var n = Math.floor(Math.random()*16);
+					color += "" + colors[n];//color = color+colors[n]
+					if (i==5)
+					{
+						return "#"+color;
+					}
+				}
+			}
+			/*btn.onclick = function(){
+				div.style.background = color1();
+			}*/
+
+			//第三种 十六进制和十进制转换
+			function color2(){
+				var color = Math.ceil(Math.random()*16777215).toString(16);
+				while (color.length<6)
+				{
+					color = "0" + color;
+				}
+				return "#"+color;
+			}
+			/*btn.onclick = function(){
+				div.style.background = color2();
+			}*/
+
+			function color3(){
+				return "#"+(function(color){
+					//Array(7-color.length);color.length = 4 Array(3)
+					//Array(3).join("0")  'a'"0"'b'"0"'c' 00
+					return new Array(7-color.length).join("0")+color
+				})((Math.random()*0x1000000 << 0).toString(16))
+			}
+			btn.onclick = function(){
+				div.style.background = color3();
+			}
+		</script>
+	</body>
+</html>

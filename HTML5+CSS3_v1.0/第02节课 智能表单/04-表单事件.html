@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>04-表单事件</title>
+    <style>
+        form {
+            width: 100%;
+            /*最大宽度*/
+            max-width: 640px;
+            /*最小宽度*/
+            min-width: 320px;
+            margin: 0 auto;
+        }
+        
+        input {
+            display: block;
+            width: 100%;
+            height: 30px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <fieldset>
+            <legend>表单事件</legend>
+            <label for="">
+               邮箱：
+               <input type="email" name="email" id="email">
+           </label>
+            <label for="">
+               <input type="text" name="password" id="pwd">
+           </label>
+            <input type="submit" value="提交">
+        </fieldset>
+    </form>
+
+    <script>
+        // oninput -> 当用户输入的时候
+        var email = document.getElementById("email");
+        var oPwd = document.getElementById("pwd");
+        var num = 0;
+        email.oninput = function() {
+            num++;
+            this.value = num;
+        }
+
+        // oninvalid -> 当验证不通过时的提示文字(一般用于设置不通过时候的提示文字)
+        email.oninvalid = function() {
+            this.setCustomValidity("请输入正确邮箱");
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            list-style-type:none;
+            padding: 0;
+        }
+        div{
+            margin-bottom: 20px;
+            background-color: #ccc;
+        }
+
+        /*.box:empty{*/
+            /*border:  solid 1px red;*/
+            /*height: 300px;*/
+        /*}*/
+
+        /*
+            :empty
+                空，  指的是 不能含有任何的字符 （enter）
+        */
+        div[contenteditable]{
+            width: 500px;
+            height: 200px;
+            border: solid 1px red;
+            margin: 30px auto;
+            display: block;
+            outline:none;
+        }
+        div[contenteditable]:empty:after{
+            content: '在发言时候，请遵守当地法律。';
+            display: block;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div contenteditable="true"></div>
+
+</body>
+</html>

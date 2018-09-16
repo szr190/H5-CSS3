@@ -1,0 +1,43 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		div{
+			width:50px;height:100px;background:red;
+			animation:change 3s 1s linear 3 alternate forwards;
+		}
+		@keyframes change{
+			0%{width:50px;}
+			100%{width:300px;}
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<div id="div"></div>
+		<script>
+			var oDiv = document.getElementById("div");
+			oDiv.addEventListener("webkitAnimationStart",start);
+			oDiv.addEventListener("animationstart", start);
+			
+			oDiv.addEventListener("webkitAnimationIteration",iteration);
+			oDiv.addEventListener("animationiteration", iteration);
+
+			oDiv.addEventListener("webkitAnimationEnd",end);
+			oDiv.addEventListener("animationend", end);
+			
+			function start(){
+				oDiv.style.backgroundColor = "black";
+			}
+			function iteration(){
+				oDiv.style.backgroundColor = "yellow";
+			}
+			function end(){
+				oDiv.style.backgroundColor = "blue";
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="author" content="">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <style>
+        div{
+            height: 30px;
+            margin-bottom: 10px;
+        }
+        /*div[data-hover]{*/
+            /*background-color: yellow;*/
+        /*}*/
+        /*div[class="abc"]{*/
+            /*background-color: yellowgreen;*/
+        /*}*/
+
+        div[class*="asdf"][id][attr="123"]{
+            background-color: yellowgreen;
+        }
+
+
+
+        /*
+            属性选择器：
+                div[data-hover]  匹配div 包含  某个属性的
+                div[class="abc"] 匹配div class = 什么的
+                div[class^="abc"]  以什么什么开头
+                div[class$="abc"]  以什么什么结尾
+                div[class*="abc"]  包含 什么什么 的'
+
+                多重（多条件）
+
+        */
+    </style>
+</head>
+<body>
+    <div class="abc asdf asdf2af asdf2rfasdf" data-hover="asdf" id="" attr="123">1</div>
+    <div class="acc">2</div>
+    <div class="acb">3</div>
+    <div class="bca">4</div>
+    <div class="abcd">5</div>
+    <div class="sadf">6</div>
+    <div class="abcdef">7</div>
+    <div>8</div>
+    <div class="abcddd">9</div>
+    <div class="asdfasd">10</div>
+</body>
+</html>

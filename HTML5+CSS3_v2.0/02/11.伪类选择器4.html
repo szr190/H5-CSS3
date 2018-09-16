@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="author" content="">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <style>
+        *{
+            margin: 0;
+            list-style-type:none;
+            padding: 0;
+        }
+        li{
+            height: 30px;
+            margin-bottom: 10px;
+            background-color: yellowgreen;
+        }
+        p{
+            background-color: pink;
+            height: 30px;
+            margin-bottom: 10px;
+        }
+        .list li:last-of-type{
+            background-color: red;
+        }
+
+        /*
+        伪类选择器：
+            of-type  同类型的 第几个：
+                nth-of-type
+                nth-last-of-type
+
+                first-of-type
+                last-of-type
+
+        */
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li>1</li>
+        <p>1-1</p>
+        <li>2</li>
+        <p>1-1</p>
+        <li>3</li>
+        <p>1-1</p>
+        <li>4</li>
+        <p>1-1</p>
+        <li>5</li>
+        <p>1-1</p>
+        <li>6</li>
+        <p>1-1</p>
+    </ul>
+</body>
+</html>

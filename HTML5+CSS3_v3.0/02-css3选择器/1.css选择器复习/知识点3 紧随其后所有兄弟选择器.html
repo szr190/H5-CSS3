@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>紧随其后所有兄弟选择器 ~ </title>
+		<style>
+			*{margin: 0;padding: 0;}
+			div p{border: 1px solid red;width: 100px;height: 30px;margin-bottom: 10px;}
+			.div3~p{
+				width: 100px;
+				height: 30px;
+				border: 1px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p></p>
+			<p></p>
+			<div class="div3"></div>
+			<p></p>
+			<p></p>
+		</div>
+	</body>
+</html>

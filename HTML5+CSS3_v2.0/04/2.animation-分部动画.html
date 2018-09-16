@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+            /*transition: 谁（要动的属性） 时间  延时（可选） 运动方式（linear、ease...）;*/
+            /*animation: js中的函数名  时间  延时（可选） 运动方式（linear、ease...）;*/
+            animation: move 5s;
+        }
+        /*-wekbit-@keyframes move {}*/
+        @keyframes move {
+            0%{
+                width: 100px;
+            }
+            50%{
+                width: 800px;
+            }
+            100%{
+                width: 500px;
+            }
+
+        }
+        /*
+            animation-name: move;       名称
+            animation-duration: 5s;     执行时间
+            animation-timing-function: initial;     运动类型
+            animation-delay: initial;       延迟
+
+            animation-iteration-count: initial;     循环次数  可选  number | infinite
+            animation-direction: initial;       是否反向运动  alternate
+            animation-fill-mode: initial;
+                设置或检索动画时间之外的状态
+                none | forwards | backwards | both
+            animation-play-state: initial;      动画状态 running | paused
+
+        */
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+        transition: 一次动画   需要我们手动的去触发它
+        animation: 多次动画（可重复动画）  可以让他自己执行。
+    -->
+</body>
+</html>

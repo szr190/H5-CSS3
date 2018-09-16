@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="author" content="">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+</head>
+<body>
+    以前要在网页上播放音频：
+        通过 flash 来实现的 Action Script 3.0 <br>
+
+    <!--<audio src="tq.mp3" controls autoplay muted loop preload></audio>-->
+    <audio controls autoplay muted loop preload>
+        <source src="tq.ogg" type="audio/ogg">
+        <source src="tq.mp3" type="audio/mpeg">
+        <source src="tq.wav" type="audio/wav">
+    </audio>
+
+    <!--
+        controls  显示浏览器自带的控制条 （每个浏览器都不一样）
+        autoplay    自动播放
+        muted  静音
+        loop    循环
+        preload     预加载
+            当 元素身上出现了 autoplay  默认就是预加载的
+
+        href 和 src区别
+            href 引入资源   可以并行加载  link . href
+            src  替代资源   当该文件没有加载完成的时候，不会进行后面的操作。
+
+        音频转换 工具：
+            格式工厂
+    -->
+
+
+</body>
+</html>

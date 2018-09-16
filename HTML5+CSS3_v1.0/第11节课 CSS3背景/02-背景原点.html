@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-背景原点</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 30px solid rgba(0, 0, 255, 0.3);
+            padding: 30px;
+            background: url(images/baby0.jpg) no-repeat;
+            /*背景原点->控制背景从什么地方开始显示*/
+            /*
+                三个值：
+                padding-box -> 默认值
+                border-box ->
+                content-box ->
+            */
+            background-origin: padding-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

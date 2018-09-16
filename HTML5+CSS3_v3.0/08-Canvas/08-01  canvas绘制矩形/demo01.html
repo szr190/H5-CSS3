@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制矩形</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{background: #000;}
+        canvas{
+            background: #fff;
+            display: block;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+   <!--
+        (1)canvas标签
+            默认宽高是300 150
+            宽和高必须写在标签行内
+                ---如果说设置在canvas中,那宽高会进行等比例的缩放
+                    例如：500*500 会进行 (500/300)*100  (500/150)*100 进行缩放
+   -->
+    <canvas id="canvas" width="500" height="500">
+        您的浏览器不支持canvas,请更换浏览器！
+    </canvas>
+
+
+<script>
+    var can=document.getElementById("canvas");
+    //设置canvas的绘图环境
+    var cxt=can.getContext("2d");//意思就是目前支持2d绘图环境
+
+    //绘制矩形
+        //设置矩形路径
+    cxt.beginPath();//开始路径
+         cxt.rect(200,200,100,100);// x y w h 分别表示x轴 y轴 宽 高
+
+/*1.stroke()*/
+        //设置触笔的颜色,宽度等,一定要在触笔方法的前面设置
+        cxt.strokeStyle="#000";//触笔的颜色
+        cxt.lineWidth=10;//触笔的线宽
+        //如何画出来呢？---利用触笔方法、填充方法
+        cxt.stroke();//stroke触笔方法
+
+/*2.fill()*/
+        //设置填充颜色,宽度等
+        cxt.fillStyle="#f00";
+        cxt.fill();//fill填充方法
+
+        //用stroke和fill同时绘制一个路径,后面绘制的会覆盖前面的
+        //触笔方法绘制的起点是线宽的中间
+
+/*3.strokeRect 绘制空心矩形  ---对上面的进行简化*/
+/*4.fillRect 绘制实心矩形*/
+/*5.clearRect 清除矩形框 ---清空是一瞬间的事情,利用这个属性进行动态感觉,发生位置的改变*/
+    cxt.clearRect(0,0,can.width,can.height);
+</script>
+</body>
+</html>

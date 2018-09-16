@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>nth-child选择指定索引处的子元素</title>
+		<style>
+			*{margin: 0;padding: 0;}
+			p{
+				width: 500px;
+				height: 50px;
+				border: 1px solid red;
+				margin-bottom: 10px;
+				line-height: 50px;
+			}
+			div p:nth-child(1){/*这里是从1开始的*/
+				background: blue;
+			}
+			div p:nth-child(3){/*这里是从1开始的*/
+				background: blue;
+			}
+			div p:nth-child(5){/*这里是从1开始的*/
+				background: blue;
+			}
+			div p:nth-child(7){/*这里是从1开始的*/
+				background: blue;
+			}
+			div p:nth-child(9){/*这里是从1开始的*/
+				background: blue;
+			}
+			div p:nth-child(11){/*这里是从1开始的*/
+				background: blue;
+			}
+			div p:nth-child(13){/*这里是从1开始的*/
+				background: blue;
+			}
+			
+			div p:nth-last-child(1){/*倒数开始 也是从1开始*/
+				background: magenta;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>1</p>
+			<p>2</p>
+			<p>3</p>
+			<p>4</p>
+			<p>5</p>
+			<p>6</p>
+			<p>7</p>
+			<p>8</p>
+			<p>9</p>
+			<p>10</p>
+			<p>11</p>
+			<p>12</p>
+			<p>13</p>
+			<p>14</p>
+		</div>
+	</body>
+</html>

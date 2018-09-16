@@ -1,0 +1,8 @@
+libvorbis
+
+stereo
+
+26000 Hz: 30-380 kbit/s
+32000 Hz: 36-380 kbit/s
+44100 Hz: 45-500 kbit/s
+48000 Hz: 45-500 kbit/s

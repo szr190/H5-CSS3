@@ -1,0 +1,156 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		.wrap{
+			position:relative;
+			width:400px;
+			margin:50px auto;
+			perspective:800px;
+		}
+		.wrap div{
+			position:absolute;
+			top:30px;
+			left:0px;
+			width:100%;
+			transform-style:preserve-3d;
+			transform-origin:top;
+			transform:rotateX(-120deg);
+		}
+		.wrap span{
+			display:block;
+			height:28px;
+			background:#33ffff;
+			line-height:28px;
+			text-align:center;
+			transition:1s;
+		}
+		#btn{
+			position:absolute;
+			left:0px;
+			top:0px;
+			width:400px;
+			height:30px;
+			z-index:1000;
+		}
+		.wrap .open{
+			transform:rotateX(0deg);
+			animation:1s open ease-in;
+		}
+		.wrap .open>span{
+			box-shadow:inset 0px 0px 100px 20px rgba(0,0,0,0)
+		}
+		@keyframes open{
+			0%{
+				transform:rotateX(-120deg);
+			}
+			25%{
+				transform:rotateX(30deg);
+			}
+			50%{
+				transform:rotateX(-15deg);
+			}
+			75%{
+				transform:rotateX(10deg);
+				box-shadow:inset 0 0 5px #ccc;
+			}
+			100%{
+				transform:rotateX(0deg);
+			}
+		}
+		.wrap .close{
+			transform:rotateX(-120deg);
+			animation:close 1s ease;
+		}
+		.wrap .close>span{
+			box-shadow:inset 0px 0px 100px 20px rgba(0,0,0,1)
+		}
+		@keyframes close{
+			0%{
+				transform:rotateX(0deg);
+			}
+			100%{
+				transform:rotateX(-120deg);
+			}
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<div class="wrap">
+			<input type="button" id="btn" value="打开">
+			<div>
+				<span>玄武</span>
+				<div>
+					<span>新手</span>
+					<div>
+						<span>小怡</span>
+						<div>
+							<span>农工</span>
+							<div>
+								<span>小飞</span>
+								<div>
+									<span>我不姓邪</span>
+									<div>
+										<span>on my way</span>
+										<div>
+											<span>小老鼠</span>
+											<div>
+												<span>小杨</span>
+												<div>
+													<span>轩陌</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			var btn = document.getElementById("btn");
+			var wrap = document.getElementsByClassName("wrap")[0];
+			var oDiv = wrap.getElementsByTagName("div");
+			var i = 0;
+			var timer = null;
+			var mark = true;
+			btn.onclick = function(){
+				if (mark)
+				{
+					i = 0;
+					timer = setInterval(function(){
+						if (i == oDiv.length-1)
+						{
+							clearInterval(timer);
+							btn.value = "关闭";
+						}
+						oDiv[i].className = "open";
+						i++;
+					},200);
+				}else{
+					i = oDiv.length-1;
+					timer = setInterval(function(){
+						if (i==0)
+						{
+							clearInterval(timer);
+							btn.value = "打开";
+						}
+						oDiv[i].className = "close";
+						i--;
+					},100);
+				}
+				mark = !mark;	
+			}
+		</script>
+	</body>
+</html>

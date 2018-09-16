@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>04-边框图片</title>
+    <style>
+        .box {
+            width: 500px;
+            height: 400px;
+            margin: 40px auto;
+            /*边框图片属性 -> 存在兼容性问题,不常用*/
+            /*边框图片的路径*/
+            border-image-source: url("border.png");
+            /*图片边框的裁剪*/
+            border-image-slice: 27 27 27 27;
+            /*图片边框的宽度*/
+            border-image-width: 27px;
+            /*边框图片的平铺*/
+            /*repeat->正常平铺,但是有可能显示不完整/round->显示完全*/
+            border-image-repeat: repeat;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="border.png" alt="">
+    <div class="box"></div>
+</body>
+
+</html>

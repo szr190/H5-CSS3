@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-网络状态监听</title>
+</head>
+
+<body>
+    <script>
+        window.addEventListener('online', function () {
+            alert('网络连接已建立！');
+        });
+
+        window.addEventListener('offline', function () {
+            alert('网络连接已断开！');
+        })
+    </script>
+</body>
+
+</html>

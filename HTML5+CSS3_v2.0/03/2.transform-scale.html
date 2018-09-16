@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            margin: 30px auto;
+            transition: .35s;
+
+            /*
+                缩放：
+                    单位   倍数
+                    scale(1.5)  原始（给的宽度）大小的1.5倍
+                        1 为 原始比例
+                        如果没有写方向，默认是  x和y
+                    scaleX \ Y
+
+            */
+        }
+        .box:hover{
+            transform: scaleY(.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+
+    </div>
+</body>
+</html>

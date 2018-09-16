@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="author" content="">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+    <style>
+
+        .list > li{
+            float: left;
+        }
+
+        /*
+            匹配直接子元素（第一层子元素）
+        */
+
+        .box p + div{
+            background-color: yellowgreen;
+        }
+        /*
+            匹配某个元素以后的紧邻元素 （下一个元素）
+        */
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>ul li</li>
+        </ul>
+        <p>撒旦发</p>
+        <p>爱上对方爱上对方</p>
+        <ol>ol</ol>
+        <div class="cont">
+            <p>爱上对方</p>
+            <ul>
+                <li> ul li</li>
+            </ul>
+        </div>
+        <div>adfasdf</div>
+    </div>
+
+
+
+
+
+</body>
+</html>

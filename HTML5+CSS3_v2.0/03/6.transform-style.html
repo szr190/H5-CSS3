@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+            margin: 70px auto;
+            transition: .35s;
+            transform-origin: 20px 40px;
+            transform-style: preserve-3d;
+
+            /*
+                flat | preserve-3d
+                设置该元素在2d平面 | 3d空间
+
+
+
+            */
+        }
+        .box:hover{
+            transform: translateZ(10px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+
+    </div>
+</body>
+</html>

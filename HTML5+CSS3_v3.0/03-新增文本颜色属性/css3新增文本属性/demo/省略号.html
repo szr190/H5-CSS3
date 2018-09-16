@@ -1,0 +1,24 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		p{
+			width:100px;height:20px;border:2px solid red;
+			white-space:nowrap;/*文本不换行显示*/
+			overflow:hidden;/*超出隐藏*/
+			text-overflow:ellipsis;/*显示省略号*/
+		}
+		p:hover{
+			white-space:normal;
+			overflow:visible;
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<p title="Description Keywords Keywords">Description Keywords Keywords</p>
+	</body>
+</html>

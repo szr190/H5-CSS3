@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+//  不会被编译的  sass的注释
+/* 属于css的注释 是会被编译出来的 */
+
+// 变量  可以存 css单位、颜色、文字
+$width:300px;
+$height:200px;
+$bgc:yellowgreen pink;
+$ms:punctuation, PingFangSC-Regular, "Microsoft YaHei", "微软雅黑";
+$bor:solid 20px red; //多值变量
+
+.box{
+  $width:100px;
+  width: $width;
+  height: $height;
+  border: $bor;
+  //background-color: nth(哪个变量,第几个);
+
+  background-color: nth($bgc,2);
+}
+
+//sass中的变量作用域  和js中的 作用域一样的
+
+//嵌套  标签怎么嵌套 他就可以怎么嵌套
+.list{
+    $lh:40px;
+    li{
+      height: $lh;
+      line-height: $lh;
+    }
+    .active{
+      background-color: yellowgreen;
+    }
+    a{
+      float: left;
+    }
+    span{
+      float: right;
+      width: 12px;
+      height: 12px;
+      background-color: yellow;
+      margin-top: ($lh - 12px) / 2;
+    }
+}
+//属性嵌套  是要用  ：来区分的
+
+.box{
+    //复合样式
+    font:{
+      style:normal;
+      weight: bold;
+      size: 14px;
+      family: $ms;
+    }
+
+    margin: {
+      top:12px;
+      right: 12px;
+      bottom: 12px;
+      left: 12px;
+    }
+}
+
+.news2{
+  &_title{
+    width: 200px;
+  }
+}
+
+.news{
+  //@at-root .news_title{
+  //    width: 10px;
+  //  }
+  //@at-root .news_content{
+  //    width: 20px;
+  //  }
+
+  @at-root {
+    .news_title{
+      width: 10px;
+    }
+    .abc{
+      width: 10px;
+    }
+  }
+}
+
+.box{
+  width: 200px;
+  &_cont{
+    width: 400px;
+    &_abc{
+      width: 200px;
+    }
+  }
+}
+
+//混合  @mixin  声明
+/*
+  @mixin opa() 不写参数  直接可以调用
+  @mixin opa($opa)   调用时候 必须传参
+  @mixin opa($opa:40)  调用的时候，如果传了就用传了的，没传就用默认的
+*/
+@mixin opa($opa:50){
+  opacity: $opa / 100;
+  filter:alpha(opacity=$opa);
+}
+
+//@include  是调用 @mixin 所声明的东西
+
+
+@mixin shadow($shadow...){
+  box-shadow: $shadow;
+}
+
+@mixin sj($fx:top,$size:10px,$color:red){
+
+  @if ($fx == top) {
+    border-color: transparent transparent $color transparent;
+    border-style: dashed dashed solid dashed;
+  }
+  @else if($fx == right){
+    border-color: transparent transparent transparent $color;
+    border-style: dashed dashed dashed solid;
+  }
+  @else if($fx == bottom){
+    border-color: $color transparent transparent transparent ;
+    border-style: solid dashed dashed dashed ;
+  }
+  @else if($fx == left){
+    border-color: transparent $color transparent transparent ;
+    border-style: dashed solid dashed dashed ;
+  }
+
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-width: $size;
+
+}
+
+
+.demo{
+  @include sj($fx:bottom,$color:yellowgreen);
+  //@include opa(80);
+  //@include shadow(0 0 10px red,0 0 20px yellow);
+}
+
+.fl{
+  float: left;
+}
+
+.box{
+  width: 300px;
+  height: 300px;
+  @extend .fl;
+}
+.box2{
+  @extend .box;
+  @extend %clearfix;
+}
+
+
+//占位选择器  （在用到的时候 才会被编译出来）
+%clearfix{
+  *zoom:1;
+  &:after,
+  &:before{
+    content: '';
+    display: table;
+  }
+  &:after{
+    clear: both;
+  }
+}
+
+.abc{
+  width: 300px;
+  @extend %clearfix;
+}
+
+
+//字符串插值
+$icon:'../images/icon/';
+$img:'../images/';
+$sina:'http://img2.sina.com.cn/2016-11-21/qiaobusi/images/icon/';
+
+//  #{变量名}
+
+.content{
+  background: url(#{$sina}/a.jpg) left top no-repeat;
+}
+
+//sass中的运算  运算符的前后 必须要有空格
+.ys{
+  color: #F00 + 255;
+  width: $width / 2;
+
+  $fs:12px;
+  $lh:24px;
+
+  font: #{$fs}/#{$lh} "Microsoft YaHei","微软雅黑";
+}
+
+//js的 for(var i=0;i<aaa.length;i++){}
+$max:10;
+$min:5;
+//sass
+//  <=
+@for $i from $min through $max{
+    .item_#{$i}{
+      background-position: -($i - 1) * 20px 0;
+    }
+}
+
+// <
+@for $i from 1 to 10{
+  .demo_#{$i}{
+    background-position: -($i - 1) * 20px 0;
+  }
+}
+
+$a:5;
+@while($a >= 1){
+  .aaa_#{$a}{
+    width: 20px * $a;
+  }
+  $a:$a - 1;
+}
+
+//each
+$icon_name:user,pass,checked,select;
+@each $i in $icon_name{
+  .icon_#{$i}{
+    width: 10px;
+  }
+}
+
+//三元  ?成立:不成立
+
+
+
+
+
+
+
+
+
+
+
+
+
+

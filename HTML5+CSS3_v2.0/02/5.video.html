@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="author" content="">
+    <meta name="copyright" content="">
+    <meta name="description" content="">
+</head>
+<body>
+    <input type="button" value="播放"><br>
+    <video poster="i.jpg" width="600" height="400" controls id="video">
+        <source src="v/mov_bbb.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        <source src="v/mov_bbb.ogv" type='video/ogg; codecs="theora, vorbis"'>
+        <source src="v/mov_bbb.webm" type='video/webm; codecs="vp8, vorbis"'>
+    </video>
+    <script>
+        var oBtn = document.getElementsByTagName('input')[0];
+        var oVideo = document.getElementById('video');
+
+        oBtn.onclick = function(){
+            oVideo.play();
+        }
+
+
+    </script>
+    <!--
+        controls  显示浏览器自带的控制条 （每个浏览器都不一样）
+        autoplay    自动播放
+        muted  静音
+        loop    循环
+        preload     预加载
+            当 元素身上出现了 autoplay  默认就是预加载的
+        poster="i.jpg"  封面（用在未播放之前的图片）
+
+
+        视频转换 工具：
+            webm  狸窝
+            ogv ogv转换工具
+    -->
+
+
+</body>
+</html>

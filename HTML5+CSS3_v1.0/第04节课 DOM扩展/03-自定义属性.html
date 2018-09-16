@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+        在给标签添加自定义属性,必须以data-开头
+    -->
+    <div class="box" data-name="szr"></div>
+
+    <script>
+        var oBox = document.querySelector('.box');
+        // Js中的自定义属性
+        oBox.index = 100;
+        // 如何获取标签的自定义属性 -> 需要通过dataset[]的方式进行获取
+        console.log(oBox.dataset['name']);
+        // 设置自定义属性值
+        oBox.dataset['dialog'] = "dialog1";
+    </script>
+</body>
+
+</html>

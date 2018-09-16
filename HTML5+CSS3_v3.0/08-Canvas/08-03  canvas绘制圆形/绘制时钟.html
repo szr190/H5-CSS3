@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制时钟</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{background: #000;}
+        canvas{
+            background: #fff;
+            display: block;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" width="500" height="500">
+    您的浏览器不支持canvas,请更换浏览器！
+</canvas>
+
+
+<script>
+    var can=document.getElementById("canvas");
+    //设置canvas的绘图环境
+    var cxt=can.getContext("2d");//意思就是目前支持2d绘图环境
+
+    //7.获取时间
+    function clock(){
+
+        //清楚画布
+        cxt.clearRect(0,0,can.width,can.height);
+
+        var now=new Date();//获得目前的时间
+        var hour=now.getHours();//小时
+        var min=now.getMinutes();//分钟
+        var sec=now.getSeconds();//秒数
+        min = min + sec/60;  //为了和分针走过的时间挂钩起来
+        hour = hour + min/60;
+
+        /*
+         绘制的步骤：
+         1.分刻度
+         2.时刻度和表盘
+         3.时针
+         4.分针
+         5.秒针
+         6.实心圆
+         7.本地时间
+         */
+//1.
+        cxt.lineWidth = 5;
+        cxt.strokeStyle = "#000";
+        for (var i = 0 ;i<60 ;i++ )
+        {
+            cxt.beginPath();
+            cxt.moveTo(250,250);
+            cxt.arc(250,250,200,i*6*Math.PI/180,(i+1)*6*Math.PI/180,false);
+            cxt.closePath();
+            cxt.stroke();
+        }
+        //绘制一个白色的圆来进行覆盖
+        cxt.fillStyle="#fff";
+        cxt.beginPath();
+        cxt.arc(250,250,185,0,360,false);
+        cxt.fill();
+
+//2.
+        cxt.lineWidth=10;
+        for(var i=0;i<12;i++){
+            cxt.beginPath();
+            cxt.moveTo(250,250);
+            cxt.arc(250,250,200,i*30*Math.PI/180,(i+1)*30*Math.PI/180,false);
+            cxt.closePath();
+            cxt.stroke();
+        }
+        //再来进行覆盖
+        cxt.fillStyle="#fff";
+        cxt.beginPath();
+        cxt.arc(250,250,180,0,360,false);
+        cxt.fill();
+
+//3.
+        cxt.lineWidth=7;
+        cxt.beginPath();
+        cxt.moveTo(250,250);
+        cxt.arc(250,250,150,(-90+hour*30)*Math.PI/180,(-90+hour*30)*Math.PI/180,false);//起点和终点一样就是绘制出了一条线
+        cxt.stroke();
+
+//4.
+        cxt.lineWidth=5;
+        cxt.beginPath();
+        cxt.moveTo(250,250);
+        cxt.arc(250,250,170,(-90+min*6)*Math.PI/180,(-90+min*6)*Math.PI/180,false);//起点和终点一样就是绘制出了一条线
+        cxt.stroke();
+
+//5.
+        cxt.lineWidth=3;
+        cxt.strokeStyle="#f00";
+        cxt.beginPath();
+        cxt.moveTo(250,250);
+        cxt.arc(250,250,180,(-90+sec*6)*Math.PI/180,(-90+sec*6)*Math.PI/180,false);//起点和终点一样就是绘制出了一条线
+        cxt.stroke();
+
+//6.
+        cxt.fillStyle="#000";
+        cxt.beginPath();
+        cxt.arc(250,250,10,0,360,false);//起点和终点一样就是绘制出了一条线
+        cxt.fill();
+    }
+
+
+
+
+    //调用定时器
+    clock();
+    setInterval(clock,1000);
+</script>
+</body>
+</html>

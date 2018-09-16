@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制文本</title>
+    <style>
+        *{margin: 0;padding:0;}
+        body{background: #000;}
+        canvas{background: #fff;display: block;margin: 50px auto;}
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500"></canvas>
+
+
+<script>
+    var can=document.getElementById("canvas");
+    var cxt=can.getContext("2d");
+    /*
+        绘制文本
+    */
+    cxt.strokeText("轩墨",100,100);
+    cxt.fillText("轩墨",200,200);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    
+    <link rel="stylesheet" href="style/reset.css" type="text/css">
+    <link rel="stylesheet" href="font/iconfont.css" type="text/css">
+    <link rel="stylesheet" href="style/common.css" type="text/css">
+    <meta id="viewport" name="viewport" content="width=640">
+    <script src="mobile-util.js"></script>
+
+    <!--<meta id="viewport" name="viewport" content="width=640,initial-scale=.5859375,maximum-scale=.5859375,minimum-scale=.5859375,user-scalable=no">-->
+    <script>
+//        alert(window.screen.width)
+        window.onload = window.onresize = function(){
+            var oEle = document.getElementById('orientation');
+            if(window.orientation=='-90' || window.orientation == '90') {
+                oEle.style.display = 'block';
+            }
+            else{
+                oEle.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--
+        手机屏幕尺寸：
+            iphone 5 320        0.5
+            iphone 6 375        0.?
+            iphone 6p 414
+
+        页面是 640
+            initial-scale=1   初始缩放比例
+            maximum-scale=1     最大。。
+            minimum-scale=1     最小。。
+
+            初始缩放比例，可以通过   屏幕的尺寸 / 网页的尺寸（设计图的尺寸）
+
+
+        640和750  正常切
+        1242(iphone 6p 做的3倍图) / 1125（iphone6 做的三倍图） / 960 (iphone5的三倍)
+
+        参考： https://www.zhihu.com/question/25308946
+
+
+        之前 改的是  html  字体大小
+               所有的元素通过 html的大小 来做调整
+
+        px转还成rem
+        http://www.520ued.com/tools/rem
+    -->
+    <div class="orientation" id="orientation">使用竖屏方式观看效果更佳。</div>
+
+    <div class="box" id="box">
+        <div class="page">
+            <header class="clearfix">
+                <a href="javascript:;" id="menu" class="menu fl iconfont icon-caidan"></a>
+                <span class="header_item"><a href="#" class="active">Open</a><a href="#">Close</a></span>
+                <a href="javascript:;" class="add fr iconfont icon-tianjia"></a>
+            </header>
+            <div class="item">
+                <div class="item_hd">
+                    <div class="item_tit clearfix">
+                        <div class="user_img">
+                            <img src="img/busy.jpg" alt="">
+                        </div>
+                        <h5>Martin Groove</h5>
+                        <span class="iconfont icon-xing1 save">175</span>
+                    </div>
+                    <p class="info_text">I can basejump from the shard! Can you?</p>
+                </div>
+                <div class="item_bd">
+                    <div class="ibd_img">
+                        <img src="img/1.jpg" alt="">
+                        <div class="ibd_time"><i></i><span>01:11:03</span></div>
+                    </div>
+                    <div class="btns clearfix">
+                        <span class="people fl iconfont icon-yonghuicon"> people</span>
+                        <span class="share fr iconfont icon-fenxiang"> share</span>
+                        <a href="" class="btn_mao iconfont icon-maoji"> ACCEPT</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item_hd">
+                    <div class="item_tit clearfix">
+                        <div class="user_img">
+                            <img src="img/busy.jpg" alt="">
+                        </div>
+                        <h5>Martin Groove</h5>
+                        <span class="iconfont icon-xing1 save">175</span>
+                    </div>
+                    <p class="info_text">I can basejump from the shard! Can you?</p>
+                </div>
+                <div class="item_bd">
+                    <div class="ibd_img">
+                        <img src="img/2.jpg" alt="">
+                        <div class="ibd_time"><i></i><span>01:11:03</span></div>
+                    </div>
+                    <div class="btns clearfix">
+                        <span class="people fl iconfont icon-yonghuicon"> people</span>
+                        <span class="share fr iconfont icon-fenxiang"> share</span>
+                        <a href="" class="btn_mao iconfont icon-maoji"> ACCEPT</a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item_hd">
+                    <div class="item_tit clearfix">
+                        <div class="user_img">
+                            <img src="img/busy.jpg" alt="">
+                        </div>
+                        <h5>Martin Groove</h5>
+                        <span class="iconfont icon-xing1 save">175</span>
+                    </div>
+                    <p class="info_text">I can basejump from the shard! Can you?</p>
+                </div>
+                <div class="item_bd">
+                    <div class="ibd_img">
+                        <img src="img/3.jpg" alt="">
+                        <div class="ibd_time"><i></i><span>01:11:03</span></div>
+                    </div>
+                    <div class="btns clearfix">
+                        <span class="people fl iconfont icon-yonghuicon"> people</span>
+                        <span class="share fr iconfont icon-fenxiang"> share</span>
+                        <a href="" class="btn_mao iconfont icon-maoji"> ACCEPT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mask"></div>
+        <div class="leftNav">
+            <a href="javascript:;" id="menu2" class="menu fl iconfont icon-caidan"></a>
+        </div>
+    </div>
+
+
+    <script>
+        var oMe = document.getElementById('menu');
+        var oMe2 = document.getElementById('menu2');
+        var oBox = document.getElementById('box');
+
+        oMe.onclick = function(){
+            oBox.className = 'box open';
+        }
+        oMe2.onclick = function(){
+            oBox.className = 'box';
+        }
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

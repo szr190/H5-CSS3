@@ -1,0 +1,107 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		#wrap{
+			width:500px;
+			height:500px;
+			margin:50px auto;
+			border:2px solid blue;
+		}
+		line{
+			stroke:red;
+			stroke-width:10;
+			fill:none;
+			stroke-dasharray:10,5,5,15,20;
+		}
+		/*path{
+			fill:red;
+		}*/
+		</style>
+	</head>
+	<body><!--身体-->
+		<div id="wrap">
+			<svg id="svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%">
+				<!-- <path d="M150 150A100 100 0 0 1 250 150L225 175A50 50 0 0 0 175 175Z"></path> -->
+			</svg>
+		</div>
+	</body>
+	<script>
+		var svgNS = "http://www.w3.org/2000/svg";
+		var svg = document.getElementById("svg");
+		//document.createElementNS(svgNS,"path");
+		//封装函数创建svg标签并加上属性值
+		function createTagEle(tag,tagAttr){
+			var oTag = document.createElementNS(svgNS,tag);
+			for (var attr in tagAttr )
+			{
+				oTag.setAttribute(attr,tagAttr[attr]);
+			}
+			return oTag;
+		};
+		var num = [14.80,11.56,6.52,5.27,31.01,30.13];//每一部分的占比
+		var angle = 360;
+		var outR = 120;
+		var inneR = 70;
+		var centerX = 200;
+		var centerY = 200;
+		
+		var color = ["red","blue","yellow","gray","black","#cc0066"];
+		
+		var time = 1000;
+		function move(){
+			var nowTime = new Date();
+			var timer = setInterval(function(){
+				var prop = (new Date() - nowTime)/time;
+				if (prop >=1)
+				{
+					prop=1;
+					clearInterval(timer);
+				}
+				var angleNum = 0;
+				var outXY = [{x:320,y:200}];
+				var inneXY = [{x:270,y:200}];
+				//计算圆弧上的每个坐标值
+				for (var i=0;i<num.length ;i++ )
+				{
+					//计算每一个区域占多少角度
+					var aNum = num[i]/100*angle;
+					angleNum += aNum;
+					//循环完一周
+					if (i == num.length-1)
+					{
+						angleNum = 360;
+					}
+					//外圆坐标
+					var outX = Math.cos(angleNum * prop * Math.PI/180)*outR + centerX;
+					var outY = Math.sin(angleNum * prop * Math.PI/180)*outR + centerY;
+					outXY.push({x:outX,y:outY});
+					//内圆坐标
+					var inneX = Math.cos(angleNum * prop * Math.PI/180)*inneR + centerX;
+					var inneY = Math.sin(angleNum * prop * Math.PI/180)*inneR + centerY;
+					inneXY.push({x:inneX,y:inneY});
+				}
+				for (var i=0;i<outXY.length ;i++ )
+				{
+					if ( i == outXY.length-1)
+					{
+						break;
+					}
+					var oPath = createTagEle('path',{
+						fill : color[i],d:"M"+outXY[i].x+' '+outXY[i].y+"A"+outR+" "+outR+" 0 0 1 "+outXY[i+1].x+" "+outXY[i+1].y+"L"+inneXY[i+1].x+" "+inneXY[i+1].y+"A"+inneR+" "+inneR+" 0 0 0 "+inneXY[i].x+" "+inneXY[i].y
+					});
+					svg.appendChild(oPath);
+				}
+			},1000/60);
+		}
+		move();
+	</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制线段</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{background: #000;}
+        canvas{
+            background: #fff;
+            display: block;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+
+<canvas id="canvas" width="500" height="500">
+    您的浏览器不支持canvas,请更换浏览器！
+</canvas>
+
+
+<script>
+    var can=document.getElementById("canvas");
+    //设置canvas的绘图环境
+    var cxt=can.getContext("2d");//意思就是目前支持2d绘图环境
+
+    cxt.beginPath();
+
+    //绘制线条路径
+    /*
+        moveTo 将开始绘制的起点移动到x,y坐标
+        lineTo 绘制到哪里
+    */
+    cxt.moveTo(100,100);
+    cxt.lineTo(200,200);
+    cxt.strokeStyle="#f00";
+    cxt.lineWidth=5;
+    cxt.stroke();
+
+</script>
+</body>
+</html>

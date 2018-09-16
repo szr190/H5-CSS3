@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 400px;
+            height: 300px;
+            border:solid 2px red;
+            -webkit-user-modify: read-write;
+        }
+        /*
+            -webkit-user-modify
+            read-only | read-write | read-write-plaintext-only
+            只读 | 内容可读写 | 内容可读写，但富粘贴的文本格式会丢失
+
+        */
+
+    </style>
+</head>
+<body>
+    <!--<div class="box" contenteditable="true"></div>-->
+    <div class="box"></div>
+</body>
+</html>

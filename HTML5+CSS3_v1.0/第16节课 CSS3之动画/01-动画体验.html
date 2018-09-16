@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-动画体验</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background: red;
+            /* animation: 动画名称 持续时间  执行次数  是否反向(alternate)  运动曲线 延迟执行*/
+            /*infinite:无限次**/
+            /*animation: move 1s infinite alternate linear 1s;*/
+            animation: steps 1s linear;
+        }
+        /*
+            css3动画的使用,类似Js中的函数
+                ---先定义 ---再调用
+            css3中定义动画：
+                @keyframes 动画名称{
+                    from {初始状态}
+                    to {结束状态}
+                }
+            调用动画：基本语法格式
+            animation:动画名称 持续时间;
+        */
+        /*定义一组动画*/
+        
+        @keyframes move {
+            from {
+                transform: translateX(0px) rotateX(0deg);
+            }
+            to {
+                transform: translateX(500px) rotateX(100deg);
+            }
+        }
+        /*定义多组动画*/
+        
+        @keyframes steps {
+            0% {
+                transform: translateX(0px) translateY(0px);
+            }
+            20% {
+                transform:translateX(500px) translateY(0px);
+            }
+            40% {
+                transform:translateX(500px) translateY(300px);
+            }
+            60% {
+                 transform:translateX(0px) translateY(300px);
+            }
+            100% {
+                transform:translateX(0px) translateY(0px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+</body>
+
+</html>

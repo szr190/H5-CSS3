@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>01-盒子模型详解</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin-top: 20px;
+            background: red;
+        }
+        
+        .box2,
+        .box3 {
+            border: 25px solid #000;
+            padding: 25px;
+        }
+        
+        .box2 {
+            /*设置的是放内容区域的大小*/
+            box-sizing: content-box;
+        }
+        
+        .box3 {
+            /*设置的是盒子模型中最大盒子大小,如果再加padding,border,只会减小放内容的区域*/
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+
+</html>

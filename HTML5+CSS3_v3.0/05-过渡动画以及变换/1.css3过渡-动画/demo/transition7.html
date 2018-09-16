@@ -1,0 +1,39 @@
+
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		.box{
+			position:relative;
+			left:0px;
+			top:0px;
+			width:100px;
+			height:100px;
+			background:red;
+			transition:left 2s linear,background-color 1s linear ;/**/
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<div class="box"></div>
+		<script>
+			var oBox = document.getElementsByClassName("box")[0];
+			oBox.onclick = function(){
+				oBox.style.left = "500px";
+			}
+			end(oBox,change)
+
+			function change(){
+				this.style.backgroundColor = "blue";
+			}
+			function end(obj,fn){
+				obj.addEventListener("webkitTransitionEnd",fn);//当动画过渡完成之后调用一个功能函数
+				obj.addEventListener("transitionend",fn);
+			}
+		</script>
+	</body>
+</html>

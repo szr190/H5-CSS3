@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-属性选择器</title>
+    <style>
+        div {
+            width: 300px;
+            height: 50px;
+            border: 1px solid #000;
+            margin: 20px auto;
+        }
+        /*div {
+            background-color: red;
+        }*/
+        
+        div[class] {
+            background-color: red;
+        }
+        
+        div[class="box1"] {
+            background-color: green;
+        }
+        /*div 带有class属性,并且以aa开头*/
+        
+        div[class^=aa] {
+            background-color: pink;
+        }
+        /*div 带有class属性,并且以aa结尾*/
+        
+        div[class$=aa] {
+            background-color: blue;
+        }
+        /*div 带有class属性,并且包含aa的*/
+        
+        div[class*=aa] {
+            background-color: maroon;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        属性选择器：[],通过标签属性来选择
+        E:表示元素
+        ^ -> 开头
+        $ -> 结尾
+        * ->包含
+        
+        语法：
+        E:[title] -> 选中页面中的E元素,并且E需要带有title属性
+        ...
+        ...
+    -->
+    <div class="box1">1</div>
+    <div class="aabox2">2</div>
+    <div class="bbbbox3">3</div>
+    <div class="box4aa">4</div>
+    <div class="box5bb">5</div>
+    <div class="aabox6bb">6</div>
+    <div class="box7">7</div>
+    <div>8</div>
+</body>
+
+</html>

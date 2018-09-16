@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        body{background: #000;}
+        canvas{display: block;background: #fff;margin: 100px auto;}
+    </style>
+</head>
+<body>
+
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+
+<script>
+    var can=document.getElementById("canvas");
+    var cxt=can.getContext("2d");
+
+    /*
+        步骤：
+         (1)绘制表盘
+         (2)时刻度
+         (3)分刻度
+         (4)时针
+         (5)分针
+         (6)秒针
+         (7)装饰时钟
+         (8)和本地时间关联
+    */
+    function drawClock() {
+
+        //(8)
+        cxt.clearRect(0,0,500,500);
+        var now = new Date();
+        var hour = now.getHours();
+        var min = now.getMinutes();
+        var sec = now.getSeconds();
+        hour = hour + min / 60;
+
+        //(1)
+        cxt.lineWidth = 10;
+        cxt.strokeStyle = "#9933ff";
+        cxt.beginPath();
+        cxt.arc(250, 250, 200, 0, Math.PI * 2, false);
+        cxt.stroke();
+        //(2)
+        for (var i = 0; i < 12; i++) {
+            cxt.save();//保存之前的画布信息
+            cxt.lineWidth = 7;
+            cxt.strokeStyle = "#ff00ff";
+            cxt.translate(250, 250);
+            cxt.rotate(i * 30 * Math.PI / 180);
+            cxt.beginPath();
+            cxt.moveTo(0, -170);
+            cxt.lineTo(0, -190);
+            cxt.closePath();
+            cxt.stroke();
+            cxt.restore();//恢复路径信息(释放之前的画布信息)
+        }
+        //(3)
+        for (var i = 0; i < 60; i++) {
+            cxt.save();//保存之前的画布信息
+            cxt.lineWidth = 5;
+            cxt.strokeStyle = "#ff00ff";
+            cxt.translate(250, 250);
+            cxt.rotate(i * 6 * Math.PI / 180);
+            cxt.beginPath();
+            cxt.moveTo(0, -180);
+            cxt.lineTo(0, -190);
+            cxt.closePath();
+            cxt.stroke();
+            cxt.restore();//恢复路径信息(释放之前的画布信息)
+        }
+        //(4)
+        cxt.save();
+        cxt.lineWidth = 7;
+        cxt.strokeStyle = "#cc00ff";
+        cxt.translate(250, 250);
+        cxt.rotate(hour * 30 * Math.PI / 180);
+        cxt.beginPath();
+        cxt.moveTo(0, -140);
+        cxt.lineTo(0, 10);
+        cxt.closePath();
+        cxt.stroke();
+        cxt.restore();
+        //(5)
+        cxt.save();
+        cxt.lineWidth = 5;
+        cxt.strokeStyle = "#cc00ff";
+        cxt.translate(250,250);
+        cxt.rotate(min*6*Math.PI/180);
+        cxt.beginPath();
+        cxt.moveTo(0,-160);
+        cxt.lineTo(0,15);
+        cxt.closePath();
+        cxt.stroke();
+        cxt.restore();
+        //(6)
+        cxt.save();
+        cxt.lineWidth = 3;
+        cxt.strokeStyle = "red";
+        cxt.translate(250,250);
+        cxt.rotate(sec*6*Math.PI/180);
+        cxt.beginPath();
+        cxt.moveTo(0,-180);
+        cxt.lineTo(0,20);
+        cxt.closePath();
+        cxt.stroke();
+        //(7)
+        //设置交叉点的圆
+        cxt.beginPath();
+        cxt.arc(0,0,5,0,Math.PI*2,false);
+        cxt.fillStyle = "#aaa";
+        cxt.fill();
+        cxt.stroke();
+        //设置秒针前面的圆
+        cxt.beginPath();
+        cxt.arc(0,-150,5,0,Math.PI*2,false);
+        cxt.fillStyle = "#aaa";
+        cxt.fill();
+        cxt.stroke();
+
+        cxt.restore();
+    }
+    drawClock();
+    setInterval(drawClock,1000);
+</script>
+</body>
+</html>

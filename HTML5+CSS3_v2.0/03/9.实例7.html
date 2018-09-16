@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 260px;
+            height: 260px;
+            position: relative;
+            margin: 60px auto;
+            border-radius: 50%;
+        }
+        .img,.text{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .img{
+            transition: .35s .25s;
+        }
+        .img img{
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+            border-radius: 50%;
+        }
+        .text{
+            background-color: rgba(0,0,0,.3);
+            z-index: 2;
+            transform: translateX(-100%);
+            opacity: 0;
+            pointer-events: none;
+            transition: .35s;
+        }
+        .img:after{
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: inset 0 0 0 20px rgba(255,255,255,.6);
+            transition: .35s .12s;
+        }
+
+
+        .box:hover .img{
+            transform: scale(.5);
+            transition: .35s .12s;
+            opacity: 0;
+        }
+        .box:hover .text{
+            transition: .35s .25s;
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="img"><img src="tuzi.png" alt=""></div>
+        <div class="text"></div>
+    </div>
+
+
+</body>
+</html>

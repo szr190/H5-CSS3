@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>案例之闪烁的太阳</title>
+    <style>
+        body{
+            background-color: cornflowerblue;
+        }
+        .sun{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+        .sun1,.sun2{
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #fff;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .sun1{
+            animation: bigger 1s infinite;
+        }
+        .sun2{
+            animation: bigger 1s infinite 0.5s;
+        }
+        @keyframes bigger{
+            0%{
+                opacity: 1;
+                transform: scale(1);
+            }
+            100%{
+                opacity: 0.1;
+                transform: scale(1.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sun">
+        <div class="sun1"></div>
+        <div class="sun2"></div>
+    </div>
+</body>
+</html>

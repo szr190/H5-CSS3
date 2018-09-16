@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    
+    <meta name="viewport" id="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <script>
+        alert(window.screen.width);
+        var _html = document.getElementsByTagName('html')[0];
+        var ch = document.documentElement.clientWidth;
+        if(ch>640) {
+            _html.style.fontSize = '40px';
+            /*最大是40*/
+        }
+        else{
+            _html.style.fontSize = ch / 16 + 'px';
+            /*ch / 16 份数*/
+        }
+    </script>
+    <style>
+        html{
+            font-size: 30px;
+        }
+        .box{
+            width: 7.5rem;
+            height: 7.5rem;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+<!--
+    有一个300的元素，在 414 保持 300
+                    375     300？减小多少？
+
+    640（iphone5 的320来的）  /  750(根据iphone 6)  /  1000+
+        如果可视区的尺寸 比640（页面大小） 要大  页面只显示640
+        如果小的话，会按照一个比例来缩放。
+        40 - HTML的 font-size
+
+        640 / 40 = 16 份 ， 每一份最大是40
+
+    750
+        50
+        750 / 50 = 15
+
+    适配：
+        1 通过rem的方式来进行适配
+'
+
+        640的页面 分成了 64份  每份最大是10
+
+        元素大小现在是 315  = 多少  31.5rem ？
+
+
+-->
+</body>
+</html>

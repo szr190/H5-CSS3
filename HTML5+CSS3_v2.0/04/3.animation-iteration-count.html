@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: yellowgreen;
+            animation-name: move;
+            animation-duration: 1s;
+
+            margin: 200px auto;
+            border-radius: 50%;
+            animation-iteration-count: infinite;
+        }
+
+
+
+        @keyframes move {
+            0%{
+                transform: scale(1);
+            }
+            100%{
+                transform: scale(1.6);
+            }
+
+        }
+        /*
+            animation-name: move;       名称
+            animation-duration: 5s;     执行时间
+            animation-timing-function: initial;     运动类型
+            animation-delay: initial;       延迟
+            
+            animation-iteration-count: initial;     循环次数  可选  number | infinite
+            animation-direction: initial;       是否反向运动  alternate
+            animation-fill-mode: initial;
+                设置或检索动画时间之外的状态
+                none | forwards | backwards | both
+            animation-play-state: initial;      动画状态 running | paused
+
+        */
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+        transition: 一次动画   需要我们手动的去触发它
+        animation: 多次动画（可重复动画）  可以让他自己执行。
+    -->
+</body>
+</html>

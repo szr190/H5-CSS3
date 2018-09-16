@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>02-transparent</title>
+    <style>
+        .out {
+            width: 400px;
+            height: 400px;
+            border: 1px solid red;
+            background-color: red;
+            margin: 100px auto;
+            position: relative;
+            /*可以单独设置透明度,但是无法改变透明度的值,只能是完全透明*/
+            background: transparent;
+        }
+        
+        .in {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -100px;
+            margin-top: -100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="out">
+        <div class="in"></div>
+    </div>
+</body>
+
+</html>

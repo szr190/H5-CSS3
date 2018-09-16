@@ -1,0 +1,188 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		*{
+			margin:0px;
+			padding:0px;
+			font-family:"微软雅黑";
+		}
+		body{
+			background:#000;
+		}
+		#music{
+			width:322px;
+			margin:50px auto;
+			position:relative;
+		}
+		#music .m_top{
+			height:42px;
+			background:url("images/phone_top.png");
+		}
+		#music .m_info{
+			height:20px;
+			background:url("images/top.jpg");
+		}
+		#music .m_title{
+			height:40px;
+			line-height:40px;
+			text-align:center;
+			color:#fff;
+			background:#000;
+			border:1px solid #fff;
+			border-top:0;
+			border-bottom:0;
+		}
+		#music .gc{
+			position:relative;
+			height:485px;
+			background:url("images/9.jpg") no-repeat center;
+			background-size:cover;
+			border:1px solid #fff;
+			border-top:0;
+			border-bottom:0;
+			overflow:hidden;
+		}
+		#music .m_bot{
+			height:47px;
+			background:url("images/phone_bottom.png");
+		}
+		.btn{
+			position:absolute;
+			left:50%;
+			bottom:70px;
+			width:50px;
+			height:50px;
+			margin-left:-25px;
+			background:url("images/normalmusic.svg") no-repeat;
+			background-size:cover;
+		}
+		.m_con{
+			position:absolute;
+			left:0px;
+			top:50px;
+		}
+		.m_con p{
+			text-align:center;
+			color:#f0f;
+			line-height:20px;
+		}
+		.rotate{
+			animation: rot 1.5s linear infinite;
+		}
+		@keyframes rot{
+			from{
+				transform:rotate(0deg);
+			}
+			to{
+				transform:rotate(360deg);
+			}
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<div id="music">
+			<div class="m_top"></div>
+			<div class="m_info"></div>
+			<div class="m_title">相伴潭州</div>
+			<div class="gc">
+				<div class="m_con"></div>
+			</div>
+			<div class="m_bot"></div>
+			<a href="javascript:;" class="btn"></a>
+		</div>
+		<textarea id="txt" style="display:none">
+		[00:00.60]相伴潭州——潭州学院校歌（作词/编曲/演唱：潭州学院）
+		[00:01.55]歌词制作 
+		[00:02.25]古潭州   源流长     书院镇潇湘
+		[00:07.26]到如今    薪火旺    再铸新辉煌
+		[00:12.86]跨深壑    品类广    传道授业忙
+		[00:17.96]攀险峰    传奇唱     续书新篇章
+		[00:23.37]风雨同舟  江湖共闯  劈破万里浪
+		[00:28.50]相伴有你   日月光芒  将前途照亮
+		[00:33.97]夙兴夜寐   心念联网   只为学员想
+		[00:39.32]相伴有你   携手图强   奋斗在路上
+		[00:46.53]筑平台   伟业昌   悲欢众担当
+		[00:56.42]虹之玉   各一方   甘苦齐分尝
+		[01:06.30]风雨同舟   江湖共闯   劈破万里浪
+		[01:12.43]相伴有你   日月光芒   将前途照亮
+		[01:18.00]夙兴夜寐   心念联网   只为学员想
+		[01:23.23]相伴有你   携手图强   奋斗在路上
+		[01:28.66]相伴有你   携手图强   奋斗在路上
+		[01:36.67]
+		</textarea>
+		<audio id="myMusic" src="music/10.mp3"></audio>
+	</body>
+	<script>
+		var oBtn = document.getElementsByClassName("btn")[0];
+		var m_con = document.getElementsByClassName("m_con")[0];
+		var myMusic = document.getElementById("myMusic");
+		var txt = document.getElementById("txt");
+		var mark = true;
+		oBtn.onclick = function(){
+			if (mark)
+			{
+				myMusic.play();
+				this.className += " rotate";
+			}else{
+				myMusic.pause();
+				this.className = this.className.replace("btn rotate","btn");
+			}
+			mark = !mark;
+		};
+		var lrc = txt.value;
+		var lrcArr = lrc.split("[");
+		//console.log(lrcArr);
+		var html = '';
+		for (var i=0;i < lrcArr.length ;i++ )
+		{
+			var arr = lrcArr[i].split("]");
+			//console.log(arr);
+			var time = arr[0].split(".");
+			var timer = time[0].split(":");
+			//console.log(timer);
+			var ms = timer[0]*60 + timer[1]*1;//将时间转换为秒
+			//console.log(ms);
+			var text = arr[1];//歌词内容
+			if (text)
+			{
+				html += "<p id=gc"+ms+">"+text+"</p>"
+			}
+			m_con.innerHTML = html;
+		}
+		var sum = 0;
+		var curTime = 0;
+		var oP= m_con.getElementsByTagName("p");
+		myMusic.addEventListener("timeupdate",function(){
+			curTime = parseInt(this.currentTime);//获取当前播放的时间
+			//console.log(curTime);
+			if (document.getElementById("gc"+curTime))
+			{	
+				//console.log(document.getElementById("gc"+curTime));
+				for (var i=0;i<oP.length ;i++  )
+				{
+					oP[i].style.color = "#f0f";
+				}
+				document.getElementById("gc"+curTime).style.color = "red";
+			}
+		});
+		setInterval(function(){
+			for ( var i=0;i<oP.length ;i++ )
+				{
+					if (oP[i].id == "gc"+curTime)
+					{
+						sum++;
+						m_con.style.top = 50-sum*20+"px";
+					}
+				}
+		},1000);
+
+		myMusic.addEventListener("ended",function(){
+			btn.className = btn.className.replace("btn rotate","btn");
+		});
+	</script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box{
+            width: 97px;
+            height: 91px;
+            background-color: yellowgreen;
+            background: url(1.jpg) 0 0 no-repeat;
+            transition: steps(7) .35s;
+
+            /*
+                steps(数字, start/end)		分步动画(逐帧动画)   新手，起步 熄火 起步....
+                参数2未设定为 end
+
+            */
+        }
+
+        .box:hover{
+            background-position: 0 -637px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

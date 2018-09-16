@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            list-style: none;
+        }
+        .list{
+            display: -webkit-box;
+            -webkit-box-pack: end;
+            /*
+                ul 是一个弹性的盒子
+
+                -webkit-box-pack: 对齐方式
+                start | center | end | justify
+
+            */
+        }
+        .list li{
+            height: 40px;
+            color: #FFF;
+            /*
+                均分剩余宽度：
+                    1 代表几份的意思
+            */
+        }
+
+        .list li:nth-child(1){
+            background-color: #E3B456;
+            -webkit-box-flex:1;
+        }
+        .list li:nth-child(2){
+            background-color: #D94C3D;
+            -webkit-box-flex:2;
+        }
+        .list li:nth-child(3){
+            background-color: #C9EBFA;
+        }
+        .list li:nth-child(4){
+            background-color: #BA5F56;
+        }
+        .list li:nth-child(5){
+            background-color: #F1A20A;
+        }
+
+    </style>
+</head>
+<body>
+<ul class="list">
+    <li>11111111111111111111</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+    <!--
+        http://caniuse.com/
+        
+        弹性布局:
+            display:-webkit-box;
+                - 旧版 标准的 （兼容性会好一些）
+
+            display:-webkit-flex;
+            display:flex;
+                - 新版的标准  兼容性稍微的弱一些
+
+
+    -->
+</body>
+</html>

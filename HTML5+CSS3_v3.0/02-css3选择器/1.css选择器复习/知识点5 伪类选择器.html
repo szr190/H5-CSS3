@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>伪类选择器</title>
+		<style>
+			*{margin: 0;padding: 0;}
+			
+			/*1.添加内容*/
+			
+			div:before{/*在前面添加内容,相当于行内元素*/
+				content: "S";
+				padding-right: 3px;
+			}
+			div:after{/*在后面添加内容,相当于行内元素*/
+				content: "Z";
+				padding-left: 3px;
+			}
+			
+			/*2.清除浮动*/
+			.clearfix:after {
+				visibility:hidden;
+				display:block;
+				font-size:0;
+				content:" ";
+				clear:both;
+				height:0;
+			}
+			.clearfix {
+				zoom:1; /* for IE6 IE7 */
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div>Hello World</div>
+	</body>
+</html>

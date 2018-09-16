@@ -1,0 +1,30 @@
+﻿会被编译
+    scss
+    sass
+
+  一次编译
+    sass 要编译的文件 编译后的文件
+  单文件监听
+    sass --watch common.scss:xx.css
+  文件夹监听
+    sass --watch 文件名名称（要监听的文件夹）：编译到哪儿（编译后的位置）
+
+  自行搜索 （windows cmd 命令大全）
+  dir 查看当前目录文件
+  cd 打开文件   cd a   cd a.txt  cd .. 上一层
+
+  cls 清除当前屏幕
+
+  ctrl + c  是否终止操作   y / n
+
+  按上下箭头  使用你最近使用的几个命令
+
+  --style 编译后的模式
+    nested 默认 expanded css纵向写法 compact 横向   compressed 压缩（所有都压缩成一行代码）
+
+
+变量：
+    var aaa = 20;
+
+$width:300px;
+$w:300px 100px 200px;

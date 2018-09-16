@@ -1,0 +1,39 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		*{
+			margin:0;padding:0;
+		}
+		#box{
+			width:500px;
+			height:500px;
+			margin:auto;
+			background:url("images/1.jpg") no-repeat;
+			background-size:100% 100%;
+			border:10px solid #fff;
+			-webkit-mask:url("images/mask.png") no-repeat;/*遮罩层mask后面的属性值和background一样*/
+			-webkit-mask-position:0px 0px;/*通过js来修改position值*/
+		}
+
+		</style>
+	</head>
+	<body><!--身体-->
+		<div id="box"></div>
+		<script>
+			var box = document.getElementById("box");
+			var w = box.offsetLeft;/*元素离浏览器左边的偏移量*/
+			var t = box.offsetTop;/*元素离浏览器顶部的偏移量*/
+			box .onmousemove = function(ev){
+				var ev = ev || window.event;
+				var x = ev.clientX-100-w;
+				var y = ev.clientY-100-t;
+				this.style.webkitMaskPosition = x + "px "+y+"px";/*记得加空格*/
+			}
+		</script>
+	</body>
+</html>

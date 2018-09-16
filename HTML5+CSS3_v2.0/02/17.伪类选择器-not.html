@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            list-style-type:none;
+            padding: 0;
+        }
+        p,div{
+            margin-bottom: 20px;
+            height: 30px;
+            background-color: #ccc;
+        }
+        .abc *[class*='aaa']:not(p){
+            background-color: yellowgreen;
+        }
+
+        /*
+            not()
+                不是什么东西
+        */
+    </style>
+</head>
+<body>
+    <div class="abc">
+        <div class="aaa"></div>
+        <p class="bbbaaa"></p>
+        <p class="dddaa"></p>
+        <p class="ccaaac"></p>
+        <p class="fff"></p>
+    </div>
+</body>
+</html>

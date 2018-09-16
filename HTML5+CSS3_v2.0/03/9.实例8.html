@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 260px;
+            height: 260px;
+            position: relative;
+            margin: 60px auto;
+            border-radius: 50%;
+        }
+        .img,.text{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        .img{
+            z-index: 3;
+            transition: transform .35s, left .35s .35s, opacity .35s .35s;
+        }
+        .img img{
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+            border-radius: 50%;
+        }
+        .text{
+            background-color: rgba(0,0,0,.3);
+            z-index: 2;
+            pointer-events: none;
+            transform: scale(.5);
+            left: 50%;
+            opacity: 0;
+
+            transition: opacity .35s .35s, left .35s .35s, transform .35s .7s;
+
+            /*
+                不要万不得已的时候，不要改变除 transform 以外的属性
+            */
+
+        }
+        .img:after{
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: '';
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            box-shadow: inset 0 0 0 20px rgba(255,255,255,.6);
+        }
+
+
+        .box:hover .img{
+            transform: scale(.5);
+            opacity: 0;
+            left: -100%;
+        }
+        .box:hover .text{
+
+            opacity: 1;
+            left: 0;
+            transform: scale(1);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="img"><img src="tuzi.png" alt=""></div>
+        <div class="text"></div>
+    </div>
+
+
+</body>
+</html>

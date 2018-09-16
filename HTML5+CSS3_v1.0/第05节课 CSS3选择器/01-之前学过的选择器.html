@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>01-之前学过的选择器</title>
+    <style>
+        /*
+            div -> 标签
+            .box -> 类名
+            #box -> id
+            div p -> 后代
+            div.box -> 标签指定选择器 
+            div,span,p -> 并集选择器
+            div>p ->子代
+            * -> 通配符
+            div+p -> 选中div后面紧跟着的第一个p
+            div~p -> 选中div后面的所有的p
+        */
+        
+        div+p {
+            background-color: red;
+        }
+        
+        div~p {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div>1111111</div>
+    <p>2222222</p>
+    <p>3333333</p>
+    <p>4444444</p>
+</body>
+
+</html>

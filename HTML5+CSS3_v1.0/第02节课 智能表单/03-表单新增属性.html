@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>03-表单新增属性</title>
+    <style>
+        form {
+            width: 100%;
+            /*最大宽度*/
+            max-width: 640px;
+            /*最小宽度*/
+            min-width: 320px;
+            margin: 0 auto;
+        }
+        
+        input {
+            display: block;
+            width: 100%;
+            height: 30px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+        新增属性
+        placeholder -> 提示信息(占位符)
+        autofocus -> 自动获取焦点
+        autocomplete -> 自动完成 on(开启) off(关闭)
+        required -> 指定是否为必填项,不能为空
+        multiple -> 多选
+        novalidate -> 关闭表单的默认验证功能(只能加给form)
+        pattern -> 自定义正则验证
+    -->
+    <!--<input type="text" name="" value="" placeholder="">-->
+
+    <form action="">
+        <fieldset>
+            <legend>新增表单属性</legend>
+            <label for="">
+                用户名：
+                <input type="text" name="username" placeholder="请输入用户名,例如：张三" autofocus autocomplete="on" required>
+            </label>
+            <label for="">
+                <input type="file" name="file" multiple>
+            </label>
+            <label for="">
+                电话：
+                <input type="tel" name="tel" pattern="1\d{10}">
+            </label>
+            <input type="submit" value="提交">
+        </fieldset>
+    </form>
+</body>
+
+</html>

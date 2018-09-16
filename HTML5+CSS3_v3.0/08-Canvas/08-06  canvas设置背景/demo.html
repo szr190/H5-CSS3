@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding:0;}
+        body{background: #000;}
+        canvas{background: #fff;display: block;margin: 100px auto;}
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500"></canvas>
+<script>
+    var can=document.getElementById("canvas");
+    var cxt=can.getContext("2d");
+    var oImg=new Image();//新建一个图片对象
+    oImg.src="8.jpg";
+    oImg.onload=createBg;
+    function createBg(){
+        var bg=cxt.createPattern(oImg,'repeat');
+        cxt.fillStyle=bg;
+        cxt.fillRect(0,0,can.width,can.height);
+    }
+
+</script>
+</body>
+</html>

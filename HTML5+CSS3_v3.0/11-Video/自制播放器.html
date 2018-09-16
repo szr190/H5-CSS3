@@ -1,0 +1,238 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		#wrap{
+			width:500px;
+			height:400px;
+			margin:auto;
+			border:1px solid red;
+		}
+
+		video{
+			background:#000;
+		}
+		#progress{
+			height:20px;
+			
+		}
+		#progress input{
+			width:55px;
+			height:20px;
+			float:left;
+			border:none;
+			outline:none;
+		}
+		#progress .pro{
+			position:relative;
+			width:390px;
+			height:20px;
+			background:#aaa;
+			float:left;
+			border-radius:10px;
+
+		}
+		#progress .pro .pro-bg{
+			width:20px;
+			height:20px;
+			border-radius:10px;
+			background:#c0c;
+		}
+		#progress .pro .pro-bar{
+			position:absolute;
+			left:0px;
+			top:0px;
+			width:20px;
+			height:20px;
+			border-radius:50%;
+			background:#6f3;
+		}
+		#control{
+			height:50px;
+			background: -webkit-linear-gradient(top,#242424 50%,#1F1F1F 50%,#171717 100%);
+		}
+		#pre{
+			display:inline-block;
+			width:33px;
+			height:33px;
+			margin-left:100px;
+			background:url("control.png") no-repeat;
+			background-position:-113px 0;
+		}
+		#play{
+			display:inline-block;
+			width:40px;
+			height:40px;
+			background:url("control.png") no-repeat;
+			background-position:0 0;
+		}
+		#next{
+			display:inline-block;
+			width:33px;
+			height:33px;
+			background:url("control.png") no-repeat;
+			background-position:-80px 0;
+		}
+		#volume{
+			display:inline-block;
+			width:100px;
+			height:17px;
+			padding-left:17px;
+			background:url("control.png") no-repeat;
+			background-position:-202px 0;
+		}
+		#volume p{
+			position:relative;
+			width:100px;
+			height:10px;
+			background:#ccc;
+		}
+		#volume p span.vol-bg{
+			width:0px;
+			height:10px;
+			background:#fff;
+			
+		}
+		#volume p span.vol-bar{
+			position:absolute;
+			left:0px;
+			top:0px;
+			width:10px;
+			height:10px;
+			border-radius:50%;
+			background:#c36;
+		}
+		#full{
+			display:inline-block;
+			width:28px;
+			height:28px;
+			background:url("control.png") no-repeat;
+			background-position:-146px 0;
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<div id="wrap">
+			<video id="video" width="500" poster="9.jpg">
+				<source src="潭州教育.mp4" type="video/mp4">
+				<source src="潭州教育.ogv" type="video/ogg">
+				您的浏览器不支持video标签，请您升级或更换浏览器！！
+			</video>
+			<div style="height:10px;background:-webkit-linear-gradient(top,#333,#555)"></div>
+			<div id="progress">
+				<input id="currTime" type="text" value="00:00:00">
+				<div class="pro">
+					<div class="pro-bg"></div>
+					<div class="pro-bar"></div>
+				</div>
+				<input id="allTime" type="text" value="00:00:00">
+			</div>
+			<div id="control">
+				<a id="pre" href="javascript:;"></a>
+				<a id="play" href="javascript:;"></a>
+				<a id="next" href="javascript:;"></a>
+				<a id="volume" href="javascript:;">
+					<p class="vol">
+						<span class="vol-bg"></span>
+						<span class="vol-bar"></span>
+					</p>
+				</a>
+				<a id="full" href="javascript:;"></a>
+			</div>
+		</div>
+	</body>
+	<script>
+		var oVideo = id("video");
+		var play = id("play");
+		var pre = id("pre");
+		var next = id("next");
+		var volume = id("volume");
+		var full = id("full");
+		var currTime = id("currTime");
+		var allTime = id("allTime");
+		var pro = document.getElementsByClassName("pro")[0];
+		var pro_bg = document.getElementsByClassName("pro-bg")[0];
+		var pro_bar = document.getElementsByClassName("pro-bar")[0];
+		var vol_bg = document.getElementsByClassName("vol-bg")[0];
+		var vol_bar = document.getElementsByClassName("vol-bar")[0];
+		var mark = true;
+		//播放按钮
+		play.onclick = function(){
+			if (mark)
+			{
+				oVideo.play();
+				this.style.backgroundPosition = "-40px 0";
+				nowTime();
+			}else{
+				oVideo.pause();
+				this.style.backgroundPosition = "0 0";
+			}
+			mark = !mark;
+			allTime.value = time(oVideo.duration);
+		};
+
+		//当前的播放时间
+		oVideo.addEventListener("timeupdate",function(){
+			nowTime();
+		});
+		function nowTime(){
+			currTime.value = time(oVideo.currentTime);
+			var n = oVideo.currentTime/oVideo.duration;
+			pro_bar.style.left = n*(pro.offsetWidth-pro_bar.offsetWidth)+"px";
+			pro_bg.style.width = 20+n*(pro.offsetWidth-pro_bar.offsetWidth)+"px";
+		}
+		function time(cTime){
+			cTime = parseInt(cTime);
+			var h = zero(Math.floor(cTime/3600));
+			var m = zero(Math.floor(cTime%3600/60));
+			var s = zero(Math.floor(cTime%60));
+			return h+":"+m+":"+s;
+		}
+		function zero(num){
+			if (num < 10)
+			{
+				return "0"+num;
+			}else{
+				return ' '+num;
+			}
+		}
+		//拖拽进度条
+		pro_bar.onmousedown = function(ev){
+			var ev = ev || window.event;
+			var x = ev.clientX - this.offsetLeft;
+			document.onmousemove = function(ev){
+				var _left = ev.clientX - x;
+				if (_left <= 0)
+				{
+					_left = 0;
+				}else if(_left >= pro.offsetWidth-pro_bar.offsetWidth){
+					_left = pro.offsetWidth-pro_bar.offsetWidth;
+				}
+				pro_bar.style.left = _left + "px";
+				pro_bg.style.width = (_left+20) + "px";
+				var proN = _left/(pro.offsetWidth-pro_bar.offsetWidth);
+				oVideo.currentTime = proN*oVideo.duration;
+				nowTime();
+			};
+			document.onmouseup = function(){
+				document.onmousemove = null;
+				document.onmouseup = null;
+			}
+		};
+		//全屏
+		full.onclick = function(){
+			oVideo.webkitRequestFullScreen();
+		};
+		function id(objId){
+			return document.getElementById(objId);
+		}
+	</script>
+</html>

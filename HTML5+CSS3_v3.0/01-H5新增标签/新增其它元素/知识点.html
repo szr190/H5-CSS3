@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{margin: 0;padding: 0;}
+			/*2.*/
+			progress{
+				background: red;/*谷歌浏览器不管换成什么颜色都是一样的*/
+			}
+			/*6.*/
+			mark{
+				background: red;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body>
+		<!--
+			1.dialog---对话标签
+			  	  open---打开
+		-->
+		<dialog open="open">
+			这是一个对话框
+		</dialog>
+		
+		<div style="height: 50px;"></div>
+		
+		<!--
+			2.progress---进度条
+				  max---最大是多少
+				  value---默认的值
+		-->
+		<progress max="100" value="0" id="prop"></progress>
+		
+		<div style="height: 50px;"></div>
+		<!--
+			3.meter---温度计等状态
+				  min/max---最小/大值
+				  value---默认值
+				  low---低温
+				  high---高温
+				  optimum---正常温度
+		-->
+		<meter min="0" max="45" value="37" low="35" high="38" optimum="37"></meter>
+		
+		<div style="height: 50px;"></div>
+		
+		<!--
+			4.datalist---数据列表标签
+					input的list属性和datalist列表的id关联
+		-->
+		
+		<input type="text" name="" id="" value="" list="mylist" />
+		
+		<datalist id="mylist">
+			<option>苹果</option>
+			<option>香蕉</option>
+			<option>桃子</option>
+		</datalist>
+		
+		<div style="height: 50px;"></div>
+		
+		<!--
+			5.ruby---注音标签/解析生僻字  ie8+
+		-->
+		<ruby>
+			犇<rt>ben</rt>
+		</ruby>
+		
+		<div style="height: 50px;"></div>
+		
+		<!--
+			6.mark---标记(与span的作用类似)
+		-->
+		<p>好<mark>神奇</mark>的字</p>
+		
+		<div style="height: 50px;"></div>
+		
+		<!--
+			7.time---标记时间(强调时间的重要性)
+				datetime---用datetime突出说明
+		-->
+		<time>2016.05.20</time>
+		<p>H5在每天<time>08:30</time>时间能听</p>
+		<p>今天是<time datetime="2016.05.20">我爱你</time>的节日</p>
+		
+		<div style="height: 50px;"></div>
+		
+		<!--
+			8.details---详情 open属性 自己展开
+		-->
+		<details open="open">
+			<summary>05.21</summary>
+			<p>今天是我爱你节日</p>
+		</details>
+		
+		<div style="height: 50px;"></div>
+		
+		<!--
+			9.menu---只兼容FF浏览器
+				type="context"---类型
+				id与contextmenu关联
+				menuitem菜单项
+				icon右键菜单显示的图标
+				label右键菜单显示的文本
+		-->
+		<span contextmenu="count">点击右键</span>
+		<menu type="context" id="count">
+			<menuitem label="05.21" icon="" onclick="alert('你好')"></menuitem>
+		</menu>
+		
+		<div style="height: 50px;"></div>
+		
+		<!--
+			10.address---只是为了搜索引擎的友好性
+		-->
+		<address>版权</address>
+		
+		
+		
+		
+		
+		
+		<script>
+		//2.
+			var oProp=document.getElementById("prop");
+			setInterval(function(){
+				oProp.value+=1;
+			},100);
+		</script>
+	</body>
+</html>

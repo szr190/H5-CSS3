@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            background-color: #F3A000;
+        }
+        .list{
+            text-align: center;
+            font-family: "Microsoft YaHei","微软雅黑";
+            font-size: 16px;
+        }
+        .list li{
+            display: inline-block;
+            margin: 30px;
+        }
+        .list a{
+            text-decoration: none;
+            color: #FFF;
+            display: inline-block;
+            height: 40px;
+            line-height: 40px;
+            position: relative;
+            padding: 0 20px;
+            overflow: hidden;
+        }
+        .list a:after{
+            content: "";
+            height: 100%;
+            width: 100%;
+            border-left: solid 2px #FFF;
+            border-bottom:solid 2px #FFF;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            /*opacity: 0;*/
+            transition: .35s;
+            transform: translateY(-38px);
+        }
+        .list a:hover:after{
+            /*opacity: 1;*/
+            transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li><a href="###">测试一个文字</a></li>
+        <li><a href="###">测试文字一个</a></li>
+    </ul>
+</body>
+</html>

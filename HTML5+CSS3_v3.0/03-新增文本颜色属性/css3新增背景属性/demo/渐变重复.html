@@ -1,0 +1,30 @@
+<!doctype html><!--声明当前文档为html文档-->
+<html lang="en"><!--语言为英语-->
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码：utf-8国际编码  gb2312中文编码-->
+		<meta name="Keywords" content="关键词">
+		<meta name="Description" content="描述">
+		<title>Document</title>
+		<style>/*css样式表的衣柜*/
+		.wrap{
+			width:500px;height:20px;
+			overflow:hidden;
+			border-radius:10px;
+		}
+		.box{
+			width:1000px;
+			height:20px;
+			background:-webkit-repeating-linear-gradient(30deg,#990066 0, #9933ff 10px ,#ff0033 10px,#00cc00 20px);
+			transition:1s linear;
+		}
+		.box:hover{
+			background-position:-400px 0;
+		}
+		</style>
+	</head>
+	<body><!--身体-->
+		<div class="wrap">
+			<div class="box"></div>
+		</div>
+	</body>
+</html>

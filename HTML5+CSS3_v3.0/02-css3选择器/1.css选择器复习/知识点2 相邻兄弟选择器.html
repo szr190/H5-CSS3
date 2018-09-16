@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>相邻兄弟选择器 + </title>
+		<style>
+			*{margin: 0;padding: 0;}
+			/*div p{width: 100px;height: 30px;border: 1px solid red;}*/
+			.div2+p{
+				width: 150px;
+				height: 30px;
+				border: 1px solid green;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>
+				<div class="div2">
+					<p></p>
+				</div>
+			
+			</p>
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>案例之动态进度条</title>
+    <style>
+        .progress{
+            width: 1000px;
+            height: 100px;
+            margin: 100px auto;
+            background: linear-gradient(135deg,black 25%,transparent 25%,transparent 50%,black 50%,black 75%,transparent 75%);
+            background-size: 100px 100px;
+            animation: move 1s infinite linear;
+        }
+        @keyframes move{
+            from{
+                background-position: -100px 0;
+            }
+            to{
+                background-position: 0 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress"></div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制曲线</title>
+    <style>
+        *{margin: 0;padding:0;}
+        body{background: #000;}
+        canvas{background: #fff;display: block;margin: 50px auto;}
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500"></canvas>
+
+
+<script>
+    var can=document.getElementById("canvas");
+    var cxt=can.getContext("2d");
+    /*
+         quadraticCurveTo(dx,dy,x1,y1)
+         贝塞尔曲线:dx,dy控制点  x1,y1结束坐标
+
+         bezierCurveTo(dx1,dy1,dx2,dy2,x1,y1)
+         贝塞尔曲线:dx1,dy1 控制点一 dx2,dy2控制点二
+         x1,y1结束坐标
+
+     */
+    cxt.beginPath();
+    cxt.moveTo(100,300);
+    cxt.quadraticCurveTo(100,100,300,100);
+    cxt.lineWidth=5;
+    cxt.stroke();
+    cxt.closePath();
+
+    cxt.beginPath();
+    cxt.moveTo(20,100);
+    cxt.bezierCurveTo(100,200,100,0,200,100);
+    cxt.lineWidth=3;
+    cxt.stroke();
+    cxt.closePath();
+</script>
+</body>
+</html>

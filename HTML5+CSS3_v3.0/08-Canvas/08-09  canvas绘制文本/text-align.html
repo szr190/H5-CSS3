@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绘制文本</title>
+    <style>
+        *{margin: 0;padding:0;}
+        body{background: #000;}
+        canvas{background: #fff;display: block;margin: 50px auto;}
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500"></canvas>
+
+
+<script>
+    /*
+         textAlign = "";文本左右对齐方式
+         start center end  left right
+
+         textBaseline文本上下对齐方式
+             alphabetic	默认。文本基线是普通的字母基线。
+             top	文本基线是 em 方框的顶端。。
+             hanging	文本基线是悬挂基线。
+             middle	文本基线是 em 方框的正中。
+             ideographic	文本基线是表意基线。
+             bottom	文本基线是 em 方框的底端。
+
+
+     */
+    var can=document.getElementById("canvas");
+    var cxt=can.getContext("2d");
+    cxt.font = "bold 40px 微软雅黑";
+    cxt.textAlign="center";//居中方式
+    cxt.textBaseline="middle";//基线
+    cxt.strokeText("我不信邪巫妖王",can.width/2,50);
+    cxt.fillText("轩陌巫妖王",can.width/2,100);
+
+</script>
+</body>
+</html>
